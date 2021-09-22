@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+ion-menu ion-header, ion-menu ion-content {
+    --background: #21295C;
+}
+
+ion-item{
+    --background: #21295C;
+}
+
+ion-icon{
+    color: whitesmoke;
+}
+.label{
+  font-family: 'Montserrat', sans-serif;
+  color: whitesmoke;
+}
+ion-menu.md{
+  --width: 100px;
+}
+ion-menu.md ion-content {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+ion-menu.md ion-list {
+  --width: 275px;
+  padding: 20px 0;
+  background: #21295C;
+
+
+}
+
+.not-active{
+    opacity: 0.35;
+}
+
+.active{
+    --background: #17215e;
+    border-radius: 5px;
+    opacity: 1;
+}
