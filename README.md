@@ -1,3 +1,8 @@
+Project Structure for Startvest Dashboard. 
+Most of the UI components were imported from package called 'ionic/react'.
+Components and pages are separated into different folders for easy understanding.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
