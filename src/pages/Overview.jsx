@@ -1,5 +1,5 @@
 import { IonPage, IonHeader, IonContent } from "@ionic/react";
-import { Toolbar, ToolbarItem, DropdownMenu, DropdownItem } from "../Toolbar";
+import { Toolbar, ToolbarItem, DropdownMenu, DropdownItem } from "../components/Toolbar";
 import '../styles/fonts.css';
 import '../styles/Overview.css';
 import '../styles/Toolbar.css';
