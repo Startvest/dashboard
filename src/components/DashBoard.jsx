@@ -1,16 +1,15 @@
-import { IonContent, IonSplitPane, IonMenu, IonHeader,
-        IonApp, IonToolbar, IonTitle, IonPage, IonItem, IonList, IonRouterOutlet } from '@ionic/react';
+import { IonSplitPane, IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Menu } from './Menu';
-import './Menu.css'
+import '../styles/Menu.css';
 import { Route, Redirect } from 'react-router';
-import { Overview } from './pages/Overview';
-import { Analytics } from './pages/Analytics';
-import { Investors } from './pages/Investors'
-import { Tools } from './pages/Tools';
-import { Messages } from './pages/Messages';
-import { Documents } from './pages/Documents';
-import { Account } from './pages/Account'
+import { Overview } from '../pages/Overview';
+import { Analytics } from '../pages/Analytics';
+import { Investors } from '../pages/Investors'
+import { Tools } from '../pages/Tools';
+import { Messages } from '../pages/Messages';
+import { Documents } from '../pages/Documents';
+import { Account } from '../pages/Account'
 
 export function Dashboard(){
     return(

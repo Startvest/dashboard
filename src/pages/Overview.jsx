@@ -1,5 +1,4 @@
-import { IonPage, IonMenuButton, IonHeader, IonChip, IonAvatar, IonImg, IonIcon, IonItem,
-    IonContent, IonToolbar, IonButtons, IonList } from "@ionic/react";
+import { IonPage, IonHeader, IonContent } from "@ionic/react";
 import { Toolbar, ToolbarItem, DropdownMenu, DropdownItem } from "../Toolbar";
 import '../styles/fonts.css';
 import '../styles/Overview.css';

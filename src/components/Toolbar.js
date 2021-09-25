@@ -1,5 +1,4 @@
-import { Img } from './Img'
-import { IonAvatar, IonIcon, IonToolbar, IonImg, IonButton, IonChip, IonMenuButton, IonButtons } from '@ionic/react';
+import { IonAvatar, IonIcon } from '@ionic/react';
 import { caretDownOutline } from 'ionicons/icons';
 import { useState } from 'react';
 export function Toolbar(props){

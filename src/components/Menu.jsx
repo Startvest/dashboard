@@ -1,12 +1,11 @@
-import { Toolbar } from "./Toolbar"
 import { Img } from "./Img"
 import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle, IonHeader, IonImg } from "@ionic/react";
 import { appsSharp, analyticsSharp, people, hammer, chatbox, documentText, person } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
-import './Menu.css'
-import './styles/fonts.css';
-import Image from './assets/logo-white.png';
+import '../styles/Menu.css'
+import '../styles/fonts.css';
+import Image from '../assets/logo-white.png';
 export function Menu(){
     const urlRoute = useLocation();
     const selections = [
