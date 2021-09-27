@@ -1,8 +1,8 @@
 import { IonSplitPane, IonApp, IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
 import { Menu } from './Menu';
 import '../styles/Menu.css';
 import { Route, Redirect } from 'react-router';
+import { IonReactHashRouter } from '@ionic/react-router';
 import { Overview } from '../pages/Overview';
 import { Analytics } from '../pages/Analytics';
 import { Investors } from '../pages/Investors'
@@ -14,7 +14,7 @@ import { Account } from '../pages/Account'
 export function Dashboard(){
     return(
         <IonApp>
-            <IonReactRouter>
+            <IonReactHashRouter>
                 <IonSplitPane contentId="main">
                     <Menu />
                     <IonRouterOutlet id="main">
@@ -34,7 +34,7 @@ export function Dashboard(){
 
                     
                 </IonSplitPane>
-            </IonReactRouter>
+            </IonReactHashRouter>
         </IonApp>
     )
 }

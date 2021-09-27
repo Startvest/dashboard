@@ -1,5 +1,5 @@
 import { Img } from "./Img"
-import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle, IonHeader, IonImg } from "@ionic/react";
+import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle } from "@ionic/react";
 import { appsSharp, analyticsSharp, people, hammer, chatbox, documentText, person } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
@@ -18,7 +18,7 @@ export function Menu(){
         {name:'Account', icon: person, url:'/my-account'}
     ]
     return(
-        <IonMenu side="start" type="overlay" menuId="menu">
+        <IonMenu side="start" type="overlay" menuId="menu" contentId="slider">
             <IonContent> 
                 <Img src={Image} />
                 <IonList>

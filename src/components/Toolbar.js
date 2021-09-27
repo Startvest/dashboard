@@ -18,7 +18,7 @@ export function ToolbarItem(props){
         <li className="toolbar-item profile">
             <a href="#" className="dropdown-btn" onClick={()=>setOpen(!open)}>
                 <IonAvatar className="avatar"> 
-                    <img className="logo" src={props.url}/>
+                    <img className="logo" src={props.url} alt="startup-logo"/>
                 </IonAvatar>
                 <IonIcon className="icon" slot="end" color={open ? 'primary':'dark'} icon={caretDownOutline} />
             </a>
