@@ -2,7 +2,7 @@
     height: 40px;
     background-color: white;
     padding: 0.1rem;
-    box-shadow: 1px 1px 1px 1px #d4d4d4;
+    box-shadow: 0.5px 0.5px 1px 1px #d4d4d4;
 }
 
 .navbar-nav{
