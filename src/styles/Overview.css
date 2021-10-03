@@ -10,3 +10,13 @@
 ion-chip:hover .dropdown-menu{
     display: block;
 }
+
+.btn-menu{
+    position: absolute;
+    left: 2px;
+}
+
+.profile{
+    position: absolute;
+    right: 0%;
+}

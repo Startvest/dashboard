@@ -15,7 +15,7 @@ ion-icon{
   color: whitesmoke;
 }
 ion-menu.md{
-  --width: 100px;
+  --width: 300px;
 }
 ion-menu.md ion-content {
   --padding-start: 8px;
