@@ -1,0 +1,35 @@
+#content-investors{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    height: 100%;
+    margin: 0 0 20px 0;
+    height: fit-content;
+}
+
+#card{
+    margin: 5px auto 0 auto;
+    height: fit-content;
+}
+
+#card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#card:hover{
+    box-shadow: 2px 2px 14px 1px #a5a5a5;
+}
+
+.btn-add{
+    --background: #1B3B6F;
+    width: 30%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2{
+    margin: 5px 0 20px 0;
+    padding: 0 0 0 5px
+}

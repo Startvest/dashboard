@@ -1,10 +1,10 @@
-import { IonAvatar, IonButtons, IonIcon, IonMenuButton } from '@ionic/react';
+import { IonAvatar, IonIcon } from '@ionic/react';
 import { caretDownOutline } from 'ionicons/icons';
 import { useState } from 'react';
 export function Toolbar(props){
 
     return (
-        <nav className="navbar">
+        <nav className="navbar" style={{backgroundColor: props.color===null?'#cad7e0': props.color}}>
             <ul className="navbar-nav">{props.children}</ul>
         </nav>
     )

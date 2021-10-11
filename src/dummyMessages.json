@@ -1,0 +1,53 @@
+{
+    "jobSeekers":[
+        {
+            "sender": "David Akpan",
+            "subject":"Application for Marketing Manager",
+            "content":"I would like to enquire more details about your recent job opening for a Marketing Manager.",
+            "profilePicture": "https://avatars.dicebear.com/api/initials/DavidAkpan.svg",
+            "url": ""
+        },
+        {
+            "sender": "Rauf Adetunji",
+            "subject":"Marketing Manager Post",
+            "content":"Good day. Is the marketing manager post still available? I would very much like to apply",
+            "profilePicture": "https://avatars.dicebear.com/api/initials/RaufAdetunji.svg"
+
+        },
+        {
+            "sender": "Amina Muhammad",
+            "subject":"Application for Salesperson",
+            "content":"Please are there any more requirements for the position?",
+            "profilePicture": "https://avatars.dicebear.com/api/initials/AminaMuhammad.svg"
+        },
+        {
+            "sender": "John Babatunde",
+            "subject":"More Information",
+            "content":"Can I know more about your company? I am really interested in your services!",
+            "profilePicture": "https://avatars.dicebear.com/api/initials/JohnBabatunde.svg"
+        }
+    ],
+
+    "investors":[
+        {
+            "sender": "Tony Elemelu",
+            "subject":"Let's Talk",
+            "content":"What does your business fully provide?",
+            "profilePicture": "./assets/images/elumelu.jfif"
+        },
+        {
+            "sender": "Aliko Dangote",
+            "subject":"",
+            "content":"",
+            "profilePicture": ""
+        },
+        {
+            "sender": "Femi Otedola",
+            "subject":"",
+            "content":"",
+            "profilePicture": ""
+        }
+        
+
+    ]
+}

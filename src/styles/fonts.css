@@ -26,3 +26,22 @@ h1, h2, h3{
 h1, h2, h3, h4, h5, h6, p, ion-label, div{
     font-family: 'Montserrat'
 }
+
+/* To make the contsnts of the page start from top to bottom */
+.ion-page{
+    justify-content: normal;
+    align-items: flex-start;
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track{
+    background: #b1b1b180;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #294491;
+    border-radius: 5px;
+}

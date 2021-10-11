@@ -1,8 +1,7 @@
 .navbar{
     height: 40px;
-    background-color: white;
     padding: 0.1rem;
-    box-shadow: 0.5px 0.5px 1px 1px #d4d4d4;
+    /*box-shadow: 0.5px 0.5px 1px 1px #d4d4d4;*/
 }
 
 .navbar-nav{
@@ -11,6 +10,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 0;
+    padding: 0
 }
 
 .toolbar-item{
@@ -20,8 +20,8 @@
     justify-content: center;
 }
 .profile{
+    margin-top: px;
     border-radius: 50px;
-    background: #dfdedeec;
     transform: translateX(-20%);
 }
 
@@ -42,6 +42,7 @@
 
 .icon{
     margin-left: 10px;
+    font-size: 10px;
 }
 .dropdown-btn{
     display: flex;
@@ -77,5 +78,5 @@
     margin: 0;
 }
 .dropdown-item:hover{
-    background: gainsboro;
+    background: #dcdcdc;
 }

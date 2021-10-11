@@ -1,0 +1,39 @@
+#message-area{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 0;
+    height: 100%;
+}
+
+.message-panel{
+    height: 200%;
+    background: #fff;
+    
+}
+
+.message-area{
+    height: 200%;
+}
+
+.not-selected{
+    --background: #fff;
+    height: inherit;
+}
+
+.not-selected:hover{
+    filter:brightness(0.8);
+}
+
+
+@media screen and (max-width: 768px){
+    #message-area{
+        display: flex;
+    }
+    .message-panel{
+        width: 100%;
+    }
+
+    .message-area{
+        display: none;
+    }
+}

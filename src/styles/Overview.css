@@ -20,3 +20,44 @@ ion-chip:hover .dropdown-menu{
     position: absolute;
     right: 0%;
 }
+
+.big-screen{
+    display: none;
+}
+
+.row{
+    padding: 10px;
+}
+
+.row-1{
+    display: grid;
+    grid-template-columns: 40% auto;
+    column-gap: 10px;
+}
+
+.row-1-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.row-2{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.content-area{
+    width: 100%;
+    background-color: #D3E2ED;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.end-icon{
+    margin-left: auto;
+}
+
+#ov-card{
+    height: fit-content;
+}
