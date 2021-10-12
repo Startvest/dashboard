@@ -1,6 +1,6 @@
 import { Img } from "./Img"
 import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle } from "@ionic/react";
-import { appsSharp, analyticsSharp, people, hammer, chatbox, documentText, person } from "ionicons/icons"
+import { appsSharp, analyticsSharp, people, hammer, chatbox, documentText, person, addCircleOutline } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
 import '../styles/Menu.css'
@@ -15,7 +15,8 @@ export function Menu(){
         {name:'Analytics', icon: analyticsSharp, url:'/analytics'},
         {name:'Investors', icon: people, url:'/investors'},
         {name:'Tools', icon: hammer, url:'/tools'},
-        {name:'Messages', icon: chatbox, url:'/messages'},
+        // {name:'Messages', icon: chatbox, url:'/messages'},
+        {name: 'Raise Funds', icon: addCircleOutline, url:'/campaign'},
         {name:'Documents', icon: documentText, url:'/documents'},
         {name:'Account', icon: person, url:'/my-account'}
     ]
