@@ -18,7 +18,7 @@ export function Documents(){
         <IonPage className="documents-page">
             <Toolbar>
                 <IonButtons slot="start">
-                    <IonMenuButton />
+                    <IonMenuButton style={{margin:'auto'}}/>
                 </IonButtons>
             </Toolbar>
 
@@ -52,7 +52,7 @@ export function Documents(){
                                                 you get fully recognized by top investors on our platform.
                                             </h6>
 
-                                            <IonButton>
+                                            <IonButton id="btn-upload">
                                                 <IonIcon slot="start" icon={cloudUpload} />
                                                 Click here to upload your pitch video
                                             </IonButton>

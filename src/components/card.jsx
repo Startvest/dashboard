@@ -1,7 +1,7 @@
 export function Card(props){
     
     return(
-        <div className="card-body" id="card" style={{backgroundColor: props.color, width:props.width}}>
+        <div className="card-body" id="card" style={{backgroundColor: props.color, width:props.width===null?"100%":props.width}}>
             {props.children}
         </div>
     )

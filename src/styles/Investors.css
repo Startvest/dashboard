@@ -33,3 +33,28 @@ h2{
     margin: 5px 0 20px 0;
     padding: 0 0 0 5px
 }
+
+@media screen and (max-width: 425px){
+    #content-investors{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-add{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width:450px) and (max-width: 768px){
+    #content-investors{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-add{
+        width: 50%;
+    }
+    
+}

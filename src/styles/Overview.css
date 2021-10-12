@@ -11,6 +11,10 @@ ion-chip:hover .dropdown-menu{
     display: block;
 }
 
+.grid{
+    width: 100%;
+}
+
 .btn-menu{
     position: absolute;
     left: 2px;
@@ -58,6 +62,3 @@ ion-chip:hover .dropdown-menu{
     margin-left: auto;
 }
 
-#ov-card{
-    height: fit-content;
-}
