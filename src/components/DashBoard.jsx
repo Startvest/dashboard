@@ -10,11 +10,12 @@ import { Tools } from '../pages/Tools';
 import { Messages } from '../pages/Messages';
 import { Documents } from '../pages/Documents';
 import { Account } from '../pages/Account'
+import { Link } from 'react-router-dom';
 
 export function Dashboard(){
     return(
         <IonApp>
-            <IonReactHashRouter>
+            <IonReactHashRouter basename="/startup">
                 <IonSplitPane contentId="main">
                     <Menu />
                     <IonRouterOutlet id="main">
@@ -22,13 +23,13 @@ export function Dashboard(){
                             <Redirect to="/overview" />
                         </Route>
 
-                        <Route path="/overview" exact="true" component={Overview}></Route>
-                        <Route path="/analytics" exact="true" component={Analytics}></Route>
-                        <Route path="/investors" exact="true" component={Investors}></Route>
-                        <Route path="/tools" exact="true" component={Tools}></Route>
-                        <Route path="/messages" exact="true" component={Messages}></Route>
-                        <Route path="/documents" exact="true" component={Documents}></Route>
-                        <Route path="/my-account" exact="true" component={Account}></Route>
+                        <Link path="/overview" exact="true" component={Overview}></Link>
+                        <Link path="/analytics" exact="true" component={Analytics}></Link>
+                        <Link path="/investors" exact="true" component={Investors}></Link>
+                        <Link path="/tools" exact="true" component={Tools}></Link>
+                        <Link path="/messages" exact="true" component={Messages}></Link>
+                        <Link path="/documents" exact="true" component={Documents}></Link>
+                        <Link path="/my-account" exact="true" component={Account}></Link>
                     </IonRouterOutlet>
 
 

@@ -1,6 +1,6 @@
 import { IonButtons, IonMenuButton, IonPage, IonToolbar } from "@ionic/react";
 
-export function InvestorOverview(){
+export function InvestorAccount(){
 
     return(
         <IonPage>
@@ -10,7 +10,7 @@ export function InvestorOverview(){
                 </IonButtons>
             </IonToolbar>
 
-            <h3>Overview</h3>
+            <h3>Account</h3>
 
         </IonPage>
     )
