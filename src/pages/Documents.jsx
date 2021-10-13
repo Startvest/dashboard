@@ -91,6 +91,24 @@ export function Documents(){
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>
+                        <IonCol size-sm="12" size-lg="6">
+                            <IonCard>
+                                <IonCardContent>
+                                    <div style={{display: 'flex', alignItems:'center', justifyContent: 'flex-start'}}>
+                                        <IonCardTitle>Certificate of Registration</IonCardTitle>
+
+                                    </div>
+                                    <h6>
+                                        This document shows that your business has been registered
+                                        under the appropriate authority to conduct business.
+                                    </h6>
+                                    <IonButton id="btn-upload">
+                                        <IonIcon slot="start" icon={cloudUpload} />
+                                        Click here to upload your certificate
+                                    </IonButton>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
                     </IonRow>
                 </IonGrid>
             </div>
