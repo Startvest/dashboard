@@ -7,6 +7,19 @@
      --altfade: #E8EAEF;
    }
 
+.campaign-head{
+     font-weight: bold !important;
+     font-size: xx-large;
+     color: var(--primary);
+}
+.campaign-body{
+     font-size: medium !important;
+}
+
+.progress-bar{
+     color: var(--primary) !important;
+     background-color: var(--primary) !important;
+}
 .camp-head{
      text-align: center;
      font-size: x-large !important;
@@ -29,5 +42,5 @@
      border: none;
 }
 .submit-btn:hover{
-     background-color: var(--alternate);
+     background-color: #294491;
 }

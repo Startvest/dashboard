@@ -1,12 +1,11 @@
-
-
 import {useState} from 'react';
-import { IonPage, IonMenuButton, IonButtons } from '@ionic/react';
+import { IonPage, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol  } from '@ionic/react';
+import { Card, CardContent } from '../components/card'
 import '../styles/fonts.css';
 import '../styles/campaign.css';
 
 // For bootstrap
-import {Form, FloatingLabel, Button, Row, Col} from 'react-bootstrap';
+import {Form, FloatingLabel, Button, ProgressBar} from 'react-bootstrap';
 
 
 export function Campaign(){
@@ -14,7 +13,7 @@ export function Campaign(){
           'amount': '',
           'time': '',
           'purpose': '',
-          'round': 'pre-seed',
+          'round': '',
           'roi': ''
      });
  
@@ -30,9 +29,25 @@ export function Campaign(){
 
             <div className="content-area" style={{display: 'flex', flexDirection: 'column'}}>
                
+               <IonGrid className="grid">
+                    <IonRow>
+                         <IonCol size-sm="12" size-md="6">
+                              <Card color="#ffffff" width="100%">
+                                    <CardContent  >
+                                        <div>
+                                            <p className='campaign-head'>Pre-seed round closed</p>
+                                            <h3 className='campaign-body'>Pre-seed investment of N100,000 from 50 investors</h3>           
+                                            <ProgressBar now={100} className='progressBar' variant={'custom'}/>                     
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                         </IonCol>
+
+                    </IonRow>
+               </IonGrid>
 
                <Form className='form'>
-               <h3 className="camp-head">Create a fundraising campaign</h3>
+               <h3 className="camp-head">Create a new fundraising campaign</h3>
                     <Form.Group className="mb-3">
                          <FloatingLabel
                          label="Target amount in Naira"
@@ -71,11 +86,14 @@ export function Campaign(){
                          <FloatingLabel
                          label="Round"
                          className="mb-3"
+                         name='round' 
+                         value={value.round} 
+                         onChange={handleChange}
                          >
                          <Form.Select>
-                              <option value="1">Pre-seed funding</option>
-                              <option value="2">Seed funding</option>
-                              <option value="3">Series A funding</option>
+                              <option value="pre-seed">Pre-seed funding</option>
+                              <option value="seed">Seed funding</option>
+                              <option value="series-a">Series A funding</option>
                          </Form.Select>
                          </FloatingLabel>
                     </Form.Group>
@@ -98,12 +116,15 @@ export function Campaign(){
                          <FloatingLabel
                          label="Percentage stake to Investors"
                          className="mb-3"
+                         name='roi' 
+                         value={value.roi} 
+                         onChange={handleChange}
                          >
                          <Form.Select>
-                              <option value="1">40%</option>
-                              <option value="2">30%</option>
-                              <option value="3">20%</option>
-                              <option value="3">10%</option>
+                              <option value="40">40%</option>
+                              <option value="30">30%</option>
+                              <option value="20">20%</option>
+                              <option value="10">10%</option>
                          </Form.Select>
                          </FloatingLabel>
                     </Form.Group>
