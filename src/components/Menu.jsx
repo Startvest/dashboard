@@ -3,7 +3,7 @@ import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle } from "@
 import { appsSharp, analyticsSharp, people, hammer, chatbox, documentText, person, addCircleOutline } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
-import '../styles/Menu.css'
+import '../styles/Menu.css';
 import '../styles/fonts.css';
 import Image from '../assets/logo-white.png';
 

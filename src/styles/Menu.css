@@ -51,7 +51,7 @@ ion-menu.md ion-list {
 .active{
   --background: var(--accent);
   color: var(--startvest-primary);
-  border-radius: 5px;
+  border-radius: 5px !important;
   font-weight: bolder;
   opacity: 0.9;
 }

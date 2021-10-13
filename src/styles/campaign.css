@@ -1,0 +1,33 @@
+:root{
+     --primary: #21295C;
+     --secondary: #1B3B6F;
+     --alternate: #065A82;
+     --accent: #D3E2ED;
+     --faded: #9EB3C2;
+     --altfade: #E8EAEF;
+   }
+
+.camp-head{
+     text-align: center;
+     font-size: x-large !important;
+     font-weight: bold;
+     color: var(--primary);
+     margin-bottom: 1em;
+}
+
+.form{
+     width: fit-content;
+     margin: 0 auto;
+     text-align: center;
+     background-color: white;
+     padding: 2em;
+     border-radius: 10px;
+     margin: 1em auto;
+}
+.submit-btn{
+     background-color: var(--primary);
+     border: none;
+}
+.submit-btn:hover{
+     background-color: var(--alternate);
+}
