@@ -54,11 +54,7 @@ export function Overview(){
                     <IonButtons slot="start" className='btn-menu'>
                         <IonMenuButton />
                     </IonButtons>
-                    <li>
-                        <IconCircle color="#fff">
-                            <IonIcon color="#21295C" icon={notificationsOutline}/>
-                        </IconCircle>
-                    </li>
+                    
                     <ToolbarItem className="profile" url={link} iconRight={caretDownOutline}>
                        <DropdownMenu>
                            <DropdownItem icon={settings}>
@@ -90,7 +86,7 @@ export function Overview(){
                                     <CardContent align="left" orientation="horizontal">
                                         <div>
                                             <p style={{fontSize: '12px', margin:'15px 0 3px 10px'}}>Your balance</p>
-                                            <h2 style={{fontSize: '23px', margin:'0 0 15px 10px'}}>N150,783</h2>                                
+                                            <h2 style={{fontSize: '23px', margin:'0 0 15px 10px'}}><span>&#8358;</span>150,783</h2>                                
                                         </div>
                                         <div style={{margin:'auto 10px auto auto'}}>
                                             <IconCircle>

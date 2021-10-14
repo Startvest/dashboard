@@ -1,0 +1,15 @@
+.balance-card{
+    --background: #1B3B6F;
+    --color: #fff;
+}
+
+#btn-start{
+    --border-radius: 50%;
+    --background: #1B3B6F;
+    width: 45px;
+    height: 45px;
+}
+
+#icon-start{
+    font-size: 15rem;
+}

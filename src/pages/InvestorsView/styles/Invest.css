@@ -1,0 +1,59 @@
+ion-page.md{
+    scroll-behavior: smooth;
+}
+
+.toolbar{
+    height: 30px;
+}
+
+.searchbar{
+    width: 60%;
+}
+
+.icon-check{
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    transform: scale(5.5, 5.5);
+}
+
+.button-inner{
+    width: 45px;
+    height: 45px;
+}
+
+#grid-invest{
+    padding: 0;
+    height: 100%;
+}
+
+#btn-check{
+    --border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-details{
+    font-size: 13px !important;
+    text-transform: capitalize;
+    box-shadow: 0;
+}
+
+@media screen and (max-width: 768px){
+    .searchbar{
+        width: 100%;
+    }
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: #a1a1a1;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #2107b6;
+    border-radius:5px;
+}

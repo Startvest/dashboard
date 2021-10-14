@@ -1,11 +1,12 @@
 import { Img } from "../Img"
-import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle } from "@ionic/react";
-import { appsSharp, analyticsSharp, hammer, person } from "ionicons/icons"
+import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle, IonButtons } from "@ionic/react";
+import { appsSharp, analyticsSharp, construct, person, cash } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
 import '../../styles/Menu.css';
 import '../../styles/fonts.css';
 import Image from '../../assets/logo-white.png';
+import { useState } from "react";
 
 
 export function InvestorsMenu(){
@@ -13,11 +14,14 @@ export function InvestorsMenu(){
     const selections = [
         {name:'Overview', icon: appsSharp, url:'/overview'},
         {name:'Analytics', icon: analyticsSharp, url:'/analytics'},
-        {name:'Tools', icon: hammer, url:'/tools'},
-        {name:'Account', icon: person, url:'/my-account'}
+        {name:'Invest', icon: cash, url:'/invest'},
+        {name:'Tools', icon: construct, url:'/tools'},
+        {name:'Account', icon: person, url:'/my-account'},
     ]
+
+   
     return(
-        <IonMenu side="start" type="overlay" menuId="investor-dashboard" contentId="investor-main" className="menu">
+        <IonMenu side="start" type="overlay" menuId="investor-dashboard" contentId="investor-main" id="menu" className="menu">
             <IonContent> 
                 <Img src={Image} />
                 <IonList>

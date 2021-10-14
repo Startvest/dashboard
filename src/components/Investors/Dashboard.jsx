@@ -7,7 +7,8 @@ import { IonReactHashRouter } from '@ionic/react-router';
 import { InvestorOverview } from '../../pages/InvestorsView/Overview';
 import { InvestorAnalytics } from '../../pages/InvestorsView/Analytics';
 import { InvestorTools } from '../../pages/InvestorsView/Tools';
-import { InvestorAccount } from '../../pages/InvestorsView/Account'
+import { InvestorAccount } from '../../pages/InvestorsView/Account';
+import { Invest } from '../../pages/InvestorsView/Invest';
 
 export function InvestorDashboard(){
     return(
@@ -22,6 +23,7 @@ export function InvestorDashboard(){
 
                         <Link path="/overview" exact="true" component={InvestorOverview}></Link>
                         <Link path="/analytics" exact="true" component={InvestorAnalytics}></Link>
+                        <Link path="/invest" exact="true" component={Invest}></Link>
                         <Link path="/tools" exact="true" component={InvestorTools}></Link>
                         <Link path="/my-account" exact="true" component={InvestorAccount}></Link>
                     </IonRouterOutlet>

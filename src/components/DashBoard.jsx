@@ -1,7 +1,7 @@
 import { IonSplitPane, IonApp, IonRouterOutlet, IonButtons, IonMenuButton } from '@ionic/react';
 import { Menu } from './Menu';
 import '../styles/Menu.css';
-import { Route, Redirect } from 'react-router';
+import { Redirect } from 'react-router';
 import { IonReactHashRouter } from '@ionic/react-router';
 import { Overview } from '../pages/Overview';
 import { Analytics } from '../pages/Analytics';
