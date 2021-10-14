@@ -3,8 +3,8 @@
     "static/js/0.415898ca.chunk.js": "/static/js/0.415898ca.chunk.js",
     "static/js/0.415898ca.chunk.js.map": "/static/js/0.415898ca.chunk.js.map",
     "main.css": "/static/css/main.b7557fbe.chunk.css",
-    "main.js": "/static/js/main.21b4340d.chunk.js",
-    "main.js.map": "/static/js/main.21b4340d.chunk.js.map",
+    "main.js": "/static/js/main.3bbc34a1.chunk.js",
+    "main.js.map": "/static/js/main.3bbc34a1.chunk.js.map",
     "polyfills-dom.js": "/static/js/polyfills-dom.5b5cb92e.chunk.js",
     "polyfills-dom.js.map": "/static/js/polyfills-dom.5b5cb92e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3366eb2b.js",
@@ -134,6 +134,6 @@
     "static/css/4.9f31a478.chunk.css",
     "static/js/4.32c34721.chunk.js",
     "static/css/main.b7557fbe.chunk.css",
-    "static/js/main.21b4340d.chunk.js"
+    "static/js/main.3bbc34a1.chunk.js"
   ]
 }
