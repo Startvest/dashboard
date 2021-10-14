@@ -1,6 +1,6 @@
 import { Img } from "../Img"
 import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle } from "@ionic/react";
-import { appsSharp, analyticsSharp, hammer, person } from "ionicons/icons"
+import { appsSharp, analyticsSharp, hammer, person, cashOutline } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
 import '../../styles/Menu.css';
@@ -14,6 +14,7 @@ export function InvestorsMenu(){
         {name:'Overview', icon: appsSharp, url:'/overview'},
         {name:'Analytics', icon: analyticsSharp, url:'/analytics'},
         {name:'Tools', icon: hammer, url:'/tools'},
+        {name: 'Invest', icon: cashOutline, url:'/invest'},
         {name:'Account', icon: person, url:'/my-account'}
     ]
     return(

@@ -6,7 +6,7 @@
 //           'Authorization': 'Bearer ' + this.state.clientToken
 
 const api = {
-     baseUrl: 'https://fsi.ng/',
+     baseUrl: 'https://fsi.ng',
      apiSecret: 'vb_ls_bfac75fe54a952841971b6918d06aeb2659523dc92d6',
      key: process.env.REACT_APP_SANDBOX_KEY,
 
@@ -16,60 +16,56 @@ const api = {
      },
      createAccount(data){
           // data:{
-          //      "id": "343",
-          //      "name": "Barbara Bergnaum",
-          //      "email": "jones_adelaide@mail.com",
-          //      "number": "08012345678",
+               // "id": "343",
+               // "name": "Barbara Bergnaum",
+               // "email": "jones_adelaide@mail.com",
+               // "number": "08012345678",
           // }
 
           const body ={           
-               "customer_reference": `CUST${data.id}`,
-               "name": data.name,
-               "email": data.email,
-               "mobile_number":data.number,
-               "expires_on": "2022-11-01",
-               "use_frequency": "100",
-               "min_amount": 1000,
-               "max_amount": 1000000,
-               "callback_url": "",
-               "destination_nuban": "",
-               "meta_data": {
-                    "somedatakey": "somedatavalue"
-               }
+               "Email": "usert@dummydata.com",
+               "Salutation": "MRS.",
+               "Gender": "F",
+               "Address" : "Afagha Nsit",
+               "MaritalStatus": "MRIED",
+               "APPID" : "Dukia Gold",
+              "BVN" : "22223345665"
           }
-          fetch(`${this.baseUrl}/v2/api/woven/vnubans/create_customer`, {
+          fetch(`${this.baseUrl}/api/heritagebank/accounts/AccountOpening/WithBVN`, {
                method: "POST",
                body: JSON.stringify(body),
                headers: {
                     "Content-type": "application/json",
-                    "api-secret": this.apiSecret,
-                    "sanbox-key": this.key
+                    // "api-secret": this.apiSecret,
+                    "Sandbox-key": this.key
                }
              })
              .then(response => response.json()) 
              .then(res => {
-                  if(res.status == 'success'){
-                    return res.data;
+                  if(res.Message == 'SUCCESS'){
+                    console.log(res);
+                    localStorage.setItem("acctNum", res.AccountNumber);
+                    localStorage.setItem("id", res.CustomerID);
                   }else{
-                       return false;
+                       console.log(res);
                   }
              })
              .catch(err => console.log(err));
              
      },
-     fundWallet(id, data){
+     sendMoney(id, data){
           // data:{
           //      "id": "343",
           //      "name": "Barbara Bergnaum",
           //      "email": "jones_adelaide@mail.com",
           //      "number": "08012345678",
           //        "acct":{
-                         // "num": 89909099,
-                         // "code": 443,
-                         // "amount": 10000,
-                         // "narration": "Invested in a startup",
-                         // "debit": 89899889,
-                         // "credit": 32323232,
+          //                "num": 89909099,
+          //                "code": 443,
+          //                "amount": 10000,
+          //                "narration": "Invested in a startup",
+          //                "debit": 89899889,
+          //                "credit": 32323232,
           // }
           // }
 
@@ -90,23 +86,41 @@ const api = {
                headers: {
                     "Content-type": "application/json",
                     // "secret_key": this.apiSecret,
-                    "Authorization": this.key
+                    "Sandbox-key": this.key
                }
              })
              .then(response => response.json()) 
              .then(res => {
                   if(res.responseMessage == 'Approved'){
-                    return res;
+                    console.log(res);
                   }else{
-                       return false;
+                    console.log(res);
                   }
              })
              .catch(err => console.log(err));
-     },recallInvestment(){
-
-     }
-
-
+     },
+     verifyLinkBVN(bvn, acctNum){
+          const body={
+               "BVN": "22142457889",
+	          "AccountNumber" : "5900406170"
+          }
+          fetch(`${this.baseUrl}/api/heritagebank/identity/ValidateAndLinkBVN`,{
+               method: "POST",
+               body: JSON.stringify(body),
+               headers:{
+                    "Authorization": this.key
+               }
+          })
+          .then(data => data.json())
+          .then(res => {
+               if(res.responseCode == '0'){
+                    return res;
+               }else{
+                    return false
+               }
+     }).catch(err => console.log(err));
+     },
+     
 
 
 }
