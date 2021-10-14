@@ -104,10 +104,10 @@ export function Invest(){
                                                               "acct":{
                                                                       "num": 89909099,
                                                                       "code": 443,
-                                                                      "amount": (Number(value.units) * Number(startup.unitPrice)).toLocaleString(),
+                                                                      "amount": (Number(value.units) * Number(startup.unitPrice)),
                                                                       "narration": "Investing in a startup",
                                                                       "debit": localStorage.getItem("acctNum"),
-                                                                      "credit": 32323232,
+                                                                      "credit": 3232323232,
                                                        } 
                                                        });
 
