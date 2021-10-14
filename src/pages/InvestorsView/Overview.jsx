@@ -10,7 +10,7 @@ export function InvestorOverview(){
         gap: '2rem'
     }
 
-    let accountBalance = "250,000"
+    let accountBalance = "150,000"
     return(
         <IonPage>
             <IonToolbar>

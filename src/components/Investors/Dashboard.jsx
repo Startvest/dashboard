@@ -9,7 +9,6 @@ import { InvestorAnalytics } from '../../pages/InvestorsView/Analytics';
 import { Invest } from '../../pages/InvestorsView/Invest';
 import { InvestorTools } from '../../pages/InvestorsView/Tools';
 import { InvestorAccount } from '../../pages/InvestorsView/Account';
-import { Invest } from '../../pages/InvestorsView/Invest';
 
 
 export function InvestorDashboard(){
