@@ -10,7 +10,7 @@ function App() {
   return (
     <IonReactHashRouter>
       <Route path="/">
-          <Redirect to='/startup'></Redirect>
+          <Redirect to='/investor'></Redirect>
       </Route>
       <Route path="/startup" component={Dashboard}/>
       <Route path="/investor" component={InvestorDashboard}/>
