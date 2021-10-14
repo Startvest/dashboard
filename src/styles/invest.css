@@ -41,3 +41,14 @@
 .submit-btn:hover{
      background-color: #294491;
 }
+.good{
+     color: green;
+     font-weight: bold;
+     font-size: xx-large;
+     margin: auto;
+}
+.icon-good{
+     margin: auto;
+     color: green;
+     font-size: 900 !important;
+}

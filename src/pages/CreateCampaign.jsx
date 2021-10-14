@@ -16,7 +16,10 @@ export function Campaign(){
           'round': '',
           'roi': ''
      });
+
+     const [view, setView] = useState('default');
  
+     const [newRound, setnewRound] = useState(false);
      const handleChange = (e) => {
           setValue({...value, [e.target.name]: e.target.value})
      };
@@ -31,6 +34,20 @@ export function Campaign(){
                
                <IonGrid className="grid">
                     <IonRow>
+                         {(newRound) ? 
+                          <IonCol size-sm="12" size-md="5">
+                          <Card color="#ffffff" width="100%">
+                                <CardContent align='left' >
+                                    <div>
+                                        <p className='campaign-head'>Current Round</p>
+                                        <h3 className='campaign-body'><b>{localStorage.getItem("round")}</b> investment of N{localStorage.getItem("amount")} </h3>        
+                                        <h3 className='campaign-body'> Campaign will be on for {localStorage.getItem("time")} days</h3>   
+                                        <ProgressBar now={Number(localStorage.getItem("percetage")) || 0} className='progressBar' variant={'custom'}/>                     
+                                    </div>
+                                </CardContent>
+                            </Card>
+                     </IonCol>:null}
+
                          <IonCol size-sm="12" size-md="6">
                               <Card color="#ffffff" width="100%">
                                     <CardContent  >
@@ -46,7 +63,10 @@ export function Campaign(){
                     </IonRow>
                </IonGrid>
 
+
                <Form className='form'>
+               {(view === 'default') ? 
+               <span>
                <h3 className="camp-head">Create a new fundraising campaign</h3>
                     <Form.Group className="mb-3">
                          <FloatingLabel
@@ -86,14 +106,15 @@ export function Campaign(){
                          <FloatingLabel
                          label="Round"
                          className="mb-3"
+                         
+                         >
+                         <Form.Select 
                          name='round' 
                          value={value.round} 
-                         onChange={handleChange}
-                         >
-                         <Form.Select>
-                              <option value="pre-seed">Pre-seed funding</option>
-                              <option value="seed">Seed funding</option>
-                              <option value="series-a">Series A funding</option>
+                         onChange={handleChange}>
+                              <option value="Pre-seed">Pre-seed funding</option>
+                              <option value="Seed">Seed funding</option>
+                              <option value="Series-a">Series A funding</option>
                          </Form.Select>
                          </FloatingLabel>
                     </Form.Group>
@@ -130,9 +151,22 @@ export function Campaign(){
                     </Form.Group>
 
                    
-                    <Button className='submit-btn' type="submit">
+                    <Button className='submit-btn' onClick={(e) => {
+                         e.preventDefault();
+                         setView('created');
+                         setnewRound(true);
+                         localStorage.setItem("round", value.round);
+                         localStorage.setItem("amount", Number(value.amount).toLocaleString());
+                         localStorage.setItem("time", value.time);
+                         localStorage.setItem("percentage", 0);
+                         setTimeout(function(){ setView('default'); }, 2000);
+                    }}>
                     Create Campaign
                     </Button>
+                    </span>
+                    : 
+                         <h3 className='good'>Successfully created a round!</h3>
+                    }
                </Form>
 
             </div>

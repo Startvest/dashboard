@@ -93,11 +93,13 @@ const api = {
              .then(res => {
                   if(res.responseMessage == 'Approved'){
                     console.log(res);
+                    
                   }else{
                     console.log(res);
+                    return false
                   }
              })
-             .catch(err => console.log(err));
+             .catch(err => {console.log(err); return false});
      },
      verifyLinkBVN(bvn, acctNum){
           const body={

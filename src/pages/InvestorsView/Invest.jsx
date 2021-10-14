@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import { IonPage, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol,IonIcon , IonModal, IonButton } from '@ionic/react';
-import { wallet, statsChart} from "ionicons/icons"
+import { wallet, checkmarkDoneOutline} from "ionicons/icons"
 import { Card, CardContent } from '../../components/card';
 import '../../styles/fonts.css';
 import '../../styles/invest.css';
@@ -28,8 +28,10 @@ export function Invest(){
           setValue({...value, [e.target.name]: e.target.value})
      };
 
+     var inv;
      useEffect(() => {
-          API.getInvestor();
+          inv = API.getInvestor();
+
           APIEx.createAccount({
                "id": "1",
                "Email": "usert@dummydata.com",
@@ -45,7 +47,7 @@ export function Invest(){
      const [investor, setInvestor] = useState({
           'name': '',
           'email': '',
-          'balance': '50000'
+          'balance': '150000'
      })
 
      const [startup, setStartup] = useState({
@@ -59,20 +61,31 @@ export function Invest(){
      const [loading, setLoading] = useState(false);
 
      const [screen, setScreen] = useState('default');
+
+     const [good, setGood] = useState(false);
+
+     const [newInvestment, setInvestment] = useState(false)
  
      const verify = () =>{
+         
           return(
                     <Card color="#ffffff" width="50%" >
                               <CardContent >
                                    <div>
-                                        <p className='campaign-head'>Verify</p>
-                                        <h3 className='campaign-body'>Are you sure you want to invest N{(Number(value.units) * Number(startup.unitPrice)).toLocaleString()} ?</h3>   
-
+                                        {(good) ? 
+                                        <div>
+                                             <h3 className='campaign-body good'>Successfully Invested in Startup A !</h3>
+                                             {/* <IonIcon className='icon-good' color={'rgb(4, 131, 4)'} size='large' icon={checkmarkDoneOutline} /> */}
+                                        </div>
+                                        : 
                                         <IonGrid>
+                                              <p className='campaign-head'>Verify</p>
+                                             <h3 className='campaign-body'>Are you sure you want to invest N{(Number(value.units) * Number(startup.unitPrice)).toLocaleString()} ?</h3>   
                                              <IonRow>
                                                   <IonCol size-sm='6'><Button className='submit-btn' 
                                                   onClick={(e) => {
                                                        e.preventDefault();
+                                                       
                                                        APIEx.sendMoney(1,{
                                                             "id": "343",
                                                             "name": "Barbara Bergnaum",
@@ -85,13 +98,23 @@ export function Invest(){
                                                                       "narration": "Investing in a startup",
                                                                       "debit": localStorage.getItem("acctNum"),
                                                                       "credit": 32323232,
-                                                       }
-                                                       })
+                                                       } 
+                                                       });
+
+                                                       setGood(true);
+                                                       setInvestor({
+                                                            balance: investor.balance - (Number(value.units) * Number(startup.unitPrice))
+                                                       });
+                                                       localStorage.setItem('amount', (Number(value.units) * Number(startup.unitPrice)).toLocaleString());
+                                                       localStorage.setItem('startup', value.startup);
+                                                       setInvestment(true);
+                                                       setTimeout(function(){ setScreen('default'); }, 2000);
+
                                                   }}>
                                                   Proceed</Button></IonCol>
                                                   <IonCol size-sm='5' offset="1"><Button className='submit-btn' onClick={(e) => {e.preventDefault(); setScreen('default')}}>Cancel</Button></IonCol>
                                              </IonRow>
-                                        </IonGrid>
+                                        </IonGrid>}
                                                   
                                    </div>
                               </CardContent>
@@ -113,7 +136,20 @@ export function Invest(){
                
                <IonGrid className="grid">
                     <IonRow>
-                         <IonCol  size-sm="5">
+                    {(newInvestment) ? 
+                         <IonCol  size-sm="4">
+                         <Card color="#ffffff" width="100%" >
+                                        <CardContent  align='left'>
+                                             <div>
+                                                  <p className='campaign-head'>Current Investment</p>
+                                                  <h3 className='campaign-body'>N{localStorage.getItem('amount')} into {localStorage.getItem('startup') || 'Startup A'}</h3>           
+                                             </div>
+                                        </CardContent>
+                           </Card>
+                         </IonCol>
+                         :''}
+
+                         <IonCol  size-md="4">
                               <Card color="#ffffff" width="100%" >
                                              <CardContent  align='left'>
                                                   <div>
@@ -124,7 +160,7 @@ export function Invest(){
                                 </Card>
                          </IonCol>
 
-                         <IonCol  size-xs="4" size-md="3" offset="3" className="ion-align-self-end">
+                         <IonCol  size-xs="4" size-md="3" offset={(newInvestment) ? '1':'5'} className="ion-align-self-end">
                               <Card color="#21295C" width="100%">
                                     <CardContent  >
                                         <div>
@@ -133,7 +169,9 @@ export function Invest(){
                                         </div>
                                     </CardContent>
                                 </Card>
-                         </IonCol>
+                         </IonCol>                       
+
+                        
 
                     </IonRow>
                     </IonGrid>
@@ -144,13 +182,13 @@ export function Invest(){
                     <Form.Group className="mb-3">
                          <FloatingLabel
                          label="Choose Startup"
-                         className="mb-3"
+                         className="mb-3"   
+                         >
+                         <Form.Select
                          name='startup' 
                          value={value.startup} 
-                         onChange={handleChange}
-                         >
-                         <Form.Select>
-                              <option value="Startup">Startup Example</option>
+                         onChange={handleChange}>
+                              <option value="Startup A">Startup A</option>
                          </Form.Select>
                          </FloatingLabel>
                     </Form.Group>
@@ -178,11 +216,11 @@ export function Invest(){
                          <FloatingLabel
                          label="Funding Source"
                          className="mb-3"
+                         >
+                         <Form.Select 
                          name='roi' 
                          value={value.roi} 
-                         onChange={handleChange}
-                         >
-                         <Form.Select>
+                         onChange={handleChange}>
                               <option value="wallet">Wallet - N{investor.balance}</option>
                          </Form.Select>
                          </FloatingLabel>
@@ -190,7 +228,9 @@ export function Invest(){
 
                     
                    
-                    <Button className='submit-btn' onClick={(e) => {e.preventDefault(); setScreen('verify')}}>
+                    <Button className='submit-btn' onClick={(e) => {
+                         e.preventDefault(); 
+                         setScreen('verify')}}>
                          Invest 
                     </Button>
                     </Form>

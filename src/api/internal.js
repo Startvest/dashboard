@@ -10,6 +10,7 @@ const api = {
           .then(data => data.json())
           .then(post => {
           console.log(post);  
+          return post;
      }).catch(err => console.log(err));
      },
      getStartup(){
