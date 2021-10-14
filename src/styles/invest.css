@@ -1,0 +1,54 @@
+:root{
+     --primary: #21295C;
+     --secondary: #1B3B6F;
+     --alternate: #065A82;
+     --accent: #D3E2ED;
+     --faded: #9EB3C2;
+     --altfade: #E8EAEF;
+   }
+
+.loading{
+     margin: auto;
+     color: var(--primary);
+     font-size: xx-large;
+     font-weight: bold;
+}
+
+.invest-head{
+     font-weight: bold !important;
+     font-size: xx-large;
+     color: var(--altfade);
+}
+.invest-body{
+     font-size: medium !important;
+     font-weight: bold !important;
+     color: var(--altfade);
+}
+.invest-form{
+     width: max-content;
+     margin: 0 auto;
+     text-align: center;
+     background-color: white;
+     padding: 2em;
+     border-radius: 10px;
+     margin: 1em auto;
+}
+
+.submit-btn{
+     background-color: var(--primary);
+     border: none;
+}
+.submit-btn:hover{
+     background-color: #294491;
+}
+.good{
+     color: green;
+     font-weight: bold;
+     font-size: xx-large;
+     margin: auto;
+}
+.icon-good{
+     margin: auto;
+     color: green;
+     font-size: 900 !important;
+}
