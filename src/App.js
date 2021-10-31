@@ -5,17 +5,12 @@ import { IonReactHashRouter } from '@ionic/react-router'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/card.css'
 import '@ionic/react/css/core.css';
-
+import Login from './login/login';
 function App() {
   return (
-    <IonReactHashRouter>
-      <Route path="/">
-          <Redirect to='/investor'></Redirect>
-      </Route>
-      <Route path="/startup" component={Dashboard}/>
-      <Route path="/investor" component={InvestorDashboard}/>
-    
-    </IonReactHashRouter>
+    <div>
+    <Login/>
+    </div>
   );
 }
 
