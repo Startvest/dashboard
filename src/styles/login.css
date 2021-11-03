@@ -11,6 +11,7 @@
    }
    .page{
      overflow-y: scroll;
+     font-size: medium !important;
    }
 /* .load{
      margin: 0;
@@ -35,6 +36,7 @@
      margin: auto;
      font-weight: bold;
      text-align: center;
+     width: 70% !important;
 }
 .form_box{
      height: max-content;
@@ -55,7 +57,8 @@
 }
 .form_items{
      background-color: transparent;
-     font-size: medium;
+     font-size: small !important;
+     font-weight: bold;
      margin: .5em auto;
 }
 .form-head{
@@ -77,9 +80,10 @@ Form{
 .forgot{
      color: var(--primary);
      cursor: pointer;
+     font-weight: bold;
 }
 .forgot:hover{
-     border-bottom: 2px solid var(--primary);
+     color: #9EB3C2;
 }
 .submit{
      text-align: center;
@@ -105,7 +109,6 @@ Form{
      width: 1em;
      margin: auto .25em;
 }
-
 .user_type{
      margin: 1em auto;
 }
@@ -113,8 +116,13 @@ Form{
      display: inline;
      margin: 0;
 }
+.remember-forgot{
+     font-size: small ;
+}
 
-
+#passwordHelpBlock{
+     font-size: small !important;
+}
 /* Css for Startup Form and Investor form*/
 .required{
      color: red;

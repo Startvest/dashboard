@@ -25,7 +25,7 @@ import SignUp from '../assets/images/sign_in.svg';
 // Import Notifications
 import Notifyer from '../components/notification';
 
-function Signup(){
+function Signup(setScreen){
      const[loading, setloading] = useState(false);
      const[value, setvalue] = useState({
           name: '',
@@ -37,8 +37,8 @@ function Signup(){
      });
      const handleChange = (e)=>{
           e.preventDefault();
-          setvalue((values) => ({
-               ...values,
+          setvalue((value) => ({
+               ...value,
                [e.target.name]:e.target.type === 'checkbox' ? e.checked : e.target.value ,
           }));
      };
@@ -58,10 +58,15 @@ function Signup(){
      display: block;
      margin: auto;
      `;
+
+     // Logic for external api call, use external functions, do not call them directly
+     function submit(){
+          setScreen('verify');
+     }
      return (
           <IonPage className='page'>
                <Container className='form' fluid='md'>
-                         <Row className='form_box shadow-lg'>
+                         <Row className='form_box shadow'>
                               <Col className='svgIcon' xs={12} md={6}><img src={ SignUp } className='svgIcon-image'  alt="Team pic svg" /></Col>
                               <Col className='form_items' xs={12} md={6}>
                                    <h2>Sign Up</h2>
@@ -119,16 +124,16 @@ function Signup(){
                                              </Form.Group>
                                         </Row>
 
-                                        <Form.Group as={ Row } controlId="signCheck">
-                                             <Col>
-                                                  <Form.Check name='check' onclick={handleChange } value={ value.check } label="Remember me" />
+                                        
+                                        <Form.Group as={ Row }>
+                                             <Col className='submit'>
+                                                  <Button type="submit" onClick={() => submit()}> {(loading) ? <SyncLoader color={'#21295C'} loading={loading} css={override} size={7} margin={5} speedMultiplier={0.8} /> : 'Sign Up'}</Button>
                                              </Col>
-                                             <Form.Label className='forgot'>Forgot Password?</Form.Label>
                                         </Form.Group>
 
                                         <Form.Group as={ Row }>
-                                             <Col className='submit'>
-                                                  <Button type="submit" > {(loading) ? <SyncLoader color={'#21295C'} loading={loading} css={override} size={7} margin={5} speedMultiplier={0.8} /> : 'Sign Up'}</Button>
+                                             <Col className='alt-login'>
+                                                  Already have an account? <span className='forgot' onClick={ () => setScreen('login') }>Login</span>
                                              </Col>
                                         </Form.Group>
                                    </Form>
@@ -139,7 +144,7 @@ function Signup(){
      )
 }
 
-function Login(){
+function Login(setScreen, setVal){
      const[loading, setloading] = useState(false);
      
      const[value, setvalue] = useState({
@@ -149,8 +154,8 @@ function Login(){
      })
      const handleChange = (e)=>{
           e.preventDefault();
-          setvalue((values) => ({
-               ...values,
+          setvalue((value) => ({
+               ...value,
                [e.target.name]:e.target.type === 'checkbox' ? e.checked : e.target.value ,
           }));
      };
@@ -163,10 +168,16 @@ function Login(){
           display: block;
           margin: auto;
           `;
+
+     // Logic for external api call, use external functions, do not call them directly
+     const submit = (e) => {
+          setScreen('sForm');
+          setVal(value);
+     }
      return (
-          <IonPage className='page'>
+          <IonPage  className='page'>
                <Container className='form '>
-                         <Row className='form_box shadow-sm'>
+                         <Row className='form_box shadow'>
                               <Col className='svgIcon' xs={12} md={6}><img src={LoginImg} className='svgIcon-image'  alt="Team pic svg" /></Col>
                               <Col className='form_items' xs={12} md={6}>
                                    <div className='form-head'>Login</div>
@@ -188,21 +199,28 @@ function Login(){
                                              </Form.Group>
                                         </Row>
 
-                                        <Form.Group as={ Row } controlId="loginCheck">
-                                             <Col>
+                                        <Form.Group as={ Row } className={'remember-forgot'}>
+                                             <Col xs={6}>
                                                   <Form.Check name='check' onChange={handleChange } value={value.check } label="Remember me" checked={value.check } />
                                              </Col>
+                                             <Col xs={6}>
                                              <Form.Label className='forgot'>Forgot Password?</Form.Label>
-                                        </Form.Group>
-
-
-
-                                        <Form.Group as={ Row }>
-                                             <Col className='submit'>
-                                                  <Button type="submit"> {(loading) ? <SyncLoader color={'#21295C'} loading={loading} css={override} size={7} margin={5} speedMultiplier={0.8} /> : 'Login'} </Button>
                                              </Col>
                                         </Form.Group>
-                                        {/* { this.altLogin(false) } */}
+
+
+
+                                        <Form.Group as={ Row } >
+                                             <Col className='submit'>
+                                                  <Button type="submit" onClick={() => submit()}> {(loading) ? <SyncLoader color={'#21295C'} loading={loading} css={override} size={7} margin={5} speedMultiplier={0.8} /> : 'Login'} </Button>
+                                             </Col>
+                                        </Form.Group>
+                                        
+                                        <Form.Group as={ Row }>
+                                             <Col>
+                                                  Do not have an account? <span className='forgot' onClick={() => setScreen('signup') }>Sign Up</span>
+                                             </Col>
+                                        </Form.Group>
                                    </Form>
                               </Col>
                          </Row>
@@ -226,13 +244,18 @@ export default function Main(){
      // login, 
      // signup, 
      // verify, 
+     // forgot,
+     // sForm,
+     // iForm
+
+     const [val, setVal] = useState([]);
 
      function view(){
           switch (screen) {
                default: return <Container className="box_design shadow-sm"><Spinner className="load" animation='border' color='#21295C' /></Container>;
-               case 'login': return Login();
-               case 'signup': return Signup();
-               case 'verify': return <VerifyEmail />;
+               case 'login': return Login((s) => setScreen(s), (val) => setVal(val));
+               case 'signup': return Signup((s) => setScreen(s));
+               case 'verify': return <VerifyEmail email={'val.email'} setScreen={(s) => setScreen(s)} close={() => setScreen('signup')}/>;
                case 'sForm': return <StartForm />;
                case 'iForm': return <InvestorForm />; 
           }

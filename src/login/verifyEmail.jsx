@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import VerifySVG from '../assets/images/verify3.svg';
 
 
-function VerifyEmail({email, setVerify, close, checkForm}){
+function VerifyEmail({email, setScreen, close}){
      useEffect(() => {
           document.title = 'Verify your email';
      })
@@ -46,8 +46,7 @@ function VerifyEmail({email, setVerify, close, checkForm}){
                // Send a fetch request to the server
                // As a different function on its own, so resend can use it
                console.log(codes['1']  + codes['2'] + codes['3'] + codes['4']);
-               setVerify();
-               checkForm();         
+               setScreen('sForm');        
            }
      }
  
@@ -101,8 +100,7 @@ function VerifyEmail({email, setVerify, close, checkForm}){
 
 VerifyEmail.propTypes={
      email: PropTypes.string.isRequired,
-     setVerify: PropTypes.func.isRequired,
+     setScreen: PropTypes.func.isRequired,
      close: PropTypes.func.isRequired,
-     checkForm: PropTypes.func.isRequired
 }
 export default VerifyEmail;
