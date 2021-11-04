@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/login.css';
 import PropTypes from'prop-types';
-
-import {Button, Form, Col, Row} from 'react-bootstrap';
+import { IonPage} from '@ionic/react';
+import {Button, Form, Col, Row, Container} from 'react-bootstrap';
 import {Info} from 'react-bootstrap-icons';
 
 // Back button
@@ -13,18 +13,17 @@ import {Info} from 'react-bootstrap-icons';
 import Notifyer from '../components/notification';
 
 // The proptypes for the function is below
-function StartupForm({registered, user_data, req, proceed}){
+function StartupForm({email, req, setScreen}){
     
      useEffect(() => {
           document.title = 'Register as a Startup';
      })
 
-     const user = JSON.parse(user_data).user;
      
      const [values, setValues] =  useState({
           'registered': true,
           'name':'',
-          'email': user.email,
+          'email': email,
           'verified': false,
           'gallery': [],
           'snapshot': '',
@@ -91,7 +90,7 @@ function StartupForm({registered, user_data, req, proceed}){
           const formData = {
                "user":{
                     "user": {
-                         "email": user.email, 
+                         "email": email, 
                     },
                     "is_investor":false,
                     "is_startup":true,
@@ -117,49 +116,19 @@ function StartupForm({registered, user_data, req, proceed}){
 
           if(!formData.company_name || !formData.snapshot || !formData.location || !formData.website || !formData.category || !formData.business_model || !formData.year_established){
                setNotify({err:true, message:'One or more required fields are empty', type:'danger'})
-          }else{
-               // Forward thinking Startup looking to change the game of fintech
-              
+          }else{              
                // Create a startup
-               const token = JSON.parse(user_data).access_token;
-               
-               const staging = 'https://startvest-staging.herokuapp.com/api/v1.0/';
 
-               fetch(`${staging}startups/${String(user.pk)}/create`, {
-                    method: 'POST', 
-                    headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                    
-                    },
-                    body: JSON.stringify(formData),
-                    })
-                    .then(res => res.json())
-                    .then(data => { 
-                         if(data.user === user.pk ){
-                              console.log(data);
-                              proceed();
-                         }else if(data.code === 'token_not_valid'){
-                              console.log('Return to the login screen or refresh the token')
-                         }
-                         else{
-                              setNotify({err:true, message:Object.values(data), type:'danger', multiple:true})
-                         }
- 
-                    }).catch((error) =>{
-                         setNotify({err:true, message:Object.values(error), type:'danger', multiple:true})
-                    });
+               // Send the data to the server
+               setNotify({err:true, message:'Registered Successfully', type:'success'})
           }
-
-
           e.preventDefault();
 
-          // console.log(formData);
      }
 
    
      return(
-          <div>
+          <IonPage className='page'>
                 {(notify.err) ? <Notifyer className='notifyer' message={notify.message} type={notify.type} multiple={notify.multiple} onDismissed={() => setNotify({err: false})} /> : null}
           <div className='form shadow'>
                <Row>
@@ -279,8 +248,8 @@ function StartupForm({registered, user_data, req, proceed}){
                <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
                </span>
                </Form>
-          </div>
-          </div>
+               </div>
+          </IonPage>
      )
 
 }

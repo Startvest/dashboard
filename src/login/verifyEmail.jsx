@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 
 import VerifySVG from '../assets/images/verify3.svg';
 
+// Import Notifications
+import Notifyer from '../components/notification';
 
 function VerifyEmail({email, setScreen, close}){
      useEffect(() => {
@@ -40,18 +42,29 @@ function VerifyEmail({email, setScreen, close}){
           };
      }
 
+        // Notification object
+        const [notify, setNotify] = useState({
+          err: false,
+          message: '',
+          type: '',
+          multiple: false
+     })    
+    
+
      const checkcomplete = (e) =>{
           // Verify is all the boxes have setValues
           if(codes['1']  && codes['2'] && codes['3'] && codes['4']){
                // Send a fetch request to the server
                // As a different function on its own, so resend can use it
                console.log(codes['1']  + codes['2'] + codes['3'] + codes['4']);
-               setScreen('sForm');        
+               setNotify({err:true, message:'Email verified successfully', type:'success'})
+               // setScreen('sForm');        
            }
      }
  
      return(
           <Container className='box_design shadow'>
+                {(notify.err) ? <Notifyer className='notifyer' message={notify.message} type={notify.type} multiple={notify.multiple} onDismissed={() => setNotify({err: false})} /> : null}
                <div className='d-flex justify-content-between ' >
                
                {/* This is an unauthodox method to cnter the svg Icon */}

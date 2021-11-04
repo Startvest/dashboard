@@ -239,7 +239,7 @@ export default function Main(){
      },[]);
      const [error, setError] = useState(false);
 
-     const [screen, setScreen] = useState('login');
+     const [screen, setScreen] = useState('sForm');
      // screen props are ;
      // login, 
      // signup, 
@@ -250,19 +250,27 @@ export default function Main(){
 
      const [val, setVal] = useState([]);
 
+      // Notification object
+      const [notify, setNotify] = useState({
+          err: false,
+          message: '',
+          type: 'success',
+          multiple: false
+     })    
+
      function view(){
           switch (screen) {
                default: return <Container className="box_design shadow-sm"><Spinner className="load" animation='border' color='#21295C' /></Container>;
                case 'login': return Login((s) => setScreen(s), (val) => setVal(val));
                case 'signup': return Signup((s) => setScreen(s));
                case 'verify': return <VerifyEmail email={'val.email'} setScreen={(s) => setScreen(s)} close={() => setScreen('signup')}/>;
-               case 'sForm': return <StartForm />;
-               case 'iForm': return <InvestorForm />; 
+               case 'sForm': return <StartForm email={val.email} setScreen={(s) => setScreen(s)}/>;
+               case 'iForm': return <InvestorForm  email={val.email} setScreen={(s) => setScreen(s)}/>; 
           }
      }
      return (
           <IonPage>
-                {(error) ? <Notifyer message={this.state.errMessage} type={this.state.type} multiple={this.state.multiple} onDismissed={() => this.setState({error: false})} />:null}
+                {(notify.err) ? <Notifyer className='notifyer' message={notify.message} type={notify.type} multiple={notify.multiple} onDismissed={() => setNotify({err: false})} /> : null}
                {view()}
           </IonPage>
      )

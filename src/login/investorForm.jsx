@@ -2,20 +2,18 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/login.css';
 import PropTypes from 'prop-types';
-
+import { IonPage} from '@ionic/react';
 import {Button, Form, Col, Row} from 'react-bootstrap';
 
 // Import Notifications
 import Notifyer from '../components/notification';
 
-function InvestorForm ({proceed, user_data, registered}){
+function InvestorForm ({email, registered}){
 
      useEffect(() => {
           document.title = 'Register as an Investor';
      })
-     
-     const user = JSON.parse(user_data).user;
-     
+      
      const [values, setValues] =  useState({
           'registered': registered || false,
           'name':'',
@@ -63,7 +61,7 @@ function InvestorForm ({proceed, user_data, registered}){
                const formData = {
                     "user" : {
                          "user":{
-                              "email": user.email
+                              "email": email
                           },
                           "is_investor": true,
                           "is_startup": false,
@@ -79,28 +77,8 @@ function InvestorForm ({proceed, user_data, registered}){
                     // "Technology","E-commerce", "BlocChian", "Artificial Intelligence"
                }
 
-               const token = JSON.parse(user_data).access_token;
-               
-               const staging = 'https://startvest-staging.herokuapp.com/api/v1.0/';
-              
-               fetch(`${staging}investors/${user.pk}/create`, {
-                    method: 'POST', 
-                    headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                    
-                    },
-                    body: JSON.stringify(formData),
-                    })
-                    .then(res => res.json())
-                    .then(data => { 
-                         // console.log(data);
-                         proceed();
-
-                    }).catch((error) =>{
-                         setNotify({err:true, message:Object.values(error), type:'danger', multiple:true})
-                    });
-               
+          //   Call external api
+          setNotify({err:true, message:'Registered Successfully', type:'success'})
           }
           
      }
@@ -108,7 +86,7 @@ function InvestorForm ({proceed, user_data, registered}){
 
 
      return(
-          <div>
+          <IonPage className='page'>
                 {(notify.err) ? <Notifyer className='notifyer' message={notify.message} type={notify.type} multiple={notify.multiple} onDismissed={() => setNotify({err: false})} /> : null}
           <div className='form shadow'>
                <Row>
@@ -153,7 +131,7 @@ function InvestorForm ({proceed, user_data, registered}){
 
                </Form>
           </div>
-          </div>
+          </IonPage>
      )
 }
 
