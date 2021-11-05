@@ -1,5 +1,3 @@
-import { Dashboard } from './components/DashBoard';
-import { InvestorDashboard } from './components/Investors/Dashboard'
 import { Route, Redirect } from 'react-router-dom';
 import { IonReactHashRouter } from '@ionic/react-router'
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -1,4 +1,5 @@
-import {React, useEffect, useState} from 'react';
+import React from 'react';
+import {useState} from 'react';
 import '../styles/login.css';
 // import PropTypes from 'prop-types';
 import { IonPage} from '@ionic/react';
@@ -21,14 +22,16 @@ import SyncLoader from "react-spinners/SyncLoader";
 import LoginImg from '../assets/images/login.svg';
 import SignUp from '../assets/images/sign_in.svg';
 
-
 // Import Notifications
 import Notifyer from '../components/notification';
 
-function Signup(setScreen){
+import { Dashboard } from '../components/DashBoard';
+import { InvestorDashboard } from '../components/Investors/Dashboard'
+
+function Signup({setScreen}){
      const[loading, setloading] = useState(false);
      const[value, setvalue] = useState({
-          name: '',
+          username: '',
           email: '',
           password: '',
           check: false,
@@ -96,7 +99,7 @@ function Signup(setScreen){
                                         <Row>
                                              <Form.Group as={ Col } controlId="SignUsername">
                                                   <Form.Label  > {(value.check1)? 'Investor name' : 'Startup name'} <span className='required'>*</span></Form.Label>
-                                                  <Form.Control name='username' onChange={ handleChange } value={ value.name } className='shadow-sm textbox' type="text" placeholder={(value.check1)? 'Enter investor\'s name' : 'Enter Business name'} required/>
+                                                  <Form.Control name='username' onChange={ handleChange } value={ value.username } className='shadow-sm textbox' type="text" placeholder={(value.check1)? 'Enter investor\'s name' : 'Enter Business name'} required/>
                                              </Form.Group>
                                         </Row>
 
@@ -113,8 +116,8 @@ function Signup(setScreen){
                                              <Form.Group as={ Col } controlId="signPassword">
                                                   <Form.Label  > Password <span className='required'>*</span></Form.Label>
                                                   <InputGroup>
-                                                       <Form.Control name='password' onChange={() => setShowPass(!showPass) } value={ value.password } className='shadow-sm textbox'  type={(showPass) ? 'text' : 'password'} placeholder="Enter password" required/>
-                                                       <InputGroup.Text className='pass-eye shadow-sm' onClick={handlePassChange}> {(showPass) ? <Eye color={'#21295C'} height={20} width={20}/> : <EyeSlash color={'#21295C'} height={20} width={20}/>} </InputGroup.Text>
+                                                       <Form.Control name='password' onChange={handleChange} value={ value.password } className='shadow-sm textbox'  type={(showPass) ? 'text' : 'password'} placeholder="Enter password" required/>
+                                                       <InputGroup.Text className='pass-eye shadow-sm' onClick={handlePassChange }> {(showPass) ? <Eye color={'#21295C'} height={20} width={20}/> : <EyeSlash color={'#21295C'} height={20} width={20}/>} </InputGroup.Text>
                                                   </InputGroup>
                                                   <Form.Text id="passwordHelpBlock" muted>
                                                   Your password must be 8-20 characters long, contain letters and numbers, and
@@ -144,7 +147,7 @@ function Signup(setScreen){
      )
 }
 
-function Login(setScreen, setVal){
+function Login({setScreen, setVal}){
      const[loading, setloading] = useState(false);
      
      const[value, setvalue] = useState({
@@ -171,7 +174,7 @@ function Login(setScreen, setVal){
 
      // Logic for external api call, use external functions, do not call them directly
      const submit = (e) => {
-          setScreen('sForm');
+          setScreen('iDash');
           setVal(value);
      }
      return (
@@ -229,54 +232,64 @@ function Login(setScreen, setVal){
      )
 }
 
-export default function Main(){
-     useEffect(()=> {
+class main extends React.Component {
+     constructor (props) {
+          super(props);
+          this.state = ({
+               error: false,
+               screen: 'login',
+               // screen props are ;
+               // login, 
+               // signup, 
+               // verify, 
+               // forgot,
+               // sForm,
+               // iForm
+
+               val: [],
+
+               // Notification object
+               notify:{
+                    err: false,
+                    msg: '',
+                    type: 'success',
+                    multiple: false,
+               }
+          });
+     }
+     componentDidMount(){
           document.title = 'Get started at StartVest'
           window.scrollTo(0, 0);
+     }
 
-          // Check if the user is logged in
-
-     },[]);
-     const [error, setError] = useState(false);
-
-     const [screen, setScreen] = useState('sForm');
-     // screen props are ;
-     // login, 
-     // signup, 
-     // verify, 
-     // forgot,
-     // sForm,
-     // iForm
-
-     const [val, setVal] = useState([]);
-
-      // Notification object
-      const [notify, setNotify] = useState({
-          err: false,
-          message: '',
-          type: 'success',
-          multiple: false
-     })    
-
-     function view(){
-          switch (screen) {
+     view(){
+          switch (this.state.screen) {
                default: return <Container className="box_design shadow-sm"><Spinner className="load" animation='border' color='#21295C' /></Container>;
-               case 'login': return Login((s) => setScreen(s), (val) => setVal(val));
-               case 'signup': return Signup((s) => setScreen(s));
-               case 'verify': return <VerifyEmail email={'val.email'} setScreen={(s) => setScreen(s)} close={() => setScreen('signup')}/>;
-               case 'sForm': return <StartForm email={val.email} setScreen={(s) => setScreen(s)}/>;
-               case 'iForm': return <InvestorForm  email={val.email} setScreen={(s) => setScreen(s)}/>; 
+               case 'login': return <Login setScreen ={(s) => this.setState({screen: s})} setVal={(val) => this.setState({val})}/>;
+               case 'signup': return <Signup setScreen={(s) => this.setState({screen: s})}/>;
+               case 'verify': return <VerifyEmail email={'val.email'} setScreen={(s) => this.setState({screen: s})} close={() => this.setState({screen: 'signup'})}/>;
+               case 'sForm': return <StartForm email={this.state.val.email} setScreen={(s) => this.setState({screen: s})}/>;
+               case 'iForm': return <InvestorForm  email={this.state.val.email} setScreen={(s) => this.setState({screen: s})}/>; 
+               case 'sDash': return <Dashboard/>
+               case 'iDash': return <InvestorDashboard/>
           }
      }
+
+     render(){
      return (
           <IonPage>
-                {(notify.err) ? <Notifyer className='notifyer' message={notify.message} type={notify.type} multiple={notify.multiple} onDismissed={() => setNotify({err: false})} /> : null}
-               {view()}
+                {(this.state.notify.err) ? <Notifyer className='notifyer' message={this.state.notify.message} type={this.state.notify.type} multiple={this.state.notify.multiple} 
+                onDismissed={() => this.setState(prevState => ({
+               notify: {                   
+                    ...prevState.notify,    
+                    err: false       
+               }
+               }))} /> 
+               : null}
+               {this.view()}
           </IonPage>
      )
+     }
 }
 
-
-
-
-
+export default main;
