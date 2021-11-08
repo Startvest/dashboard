@@ -1,12 +1,43 @@
-::-webkit-scrollbar{
-     width: 5px;
- }
- 
- ::-webkit-scrollbar-track{
-     background: #E8EAEF;
- }
- 
- ::-webkit-scrollbar-thumb{
-     background: #21295C;
-     border-radius: 3px;
- }
+/* To import the colors of the brand */
+@import "./styles/colors.css";
+
+.App {
+  text-align: center;
+}
+*{
+  font-family: Montserrat,"Helvetica";
+}
+
+/* Styling to change the appearance of the scroll bars */
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+/* The arrows at the beginning and end*/
+::-webkit-scrollbar-button{
+  display: none;
+}
+/* the track (progress bar) NOT covered by the handle. */
+/* ::-webkit-scrollbar-track-piece{
+  background: red;
+} */
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #555; */
+  background: var(--secondary);
+  cursor: pointer;
+}
+

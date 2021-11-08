@@ -1,4 +1,4 @@
-import '../styles/fonts.css';
+import '../../styles/fonts.css';
 import { IonPage, IonMenuButton, IonButtons, IonToolbar } from "@ionic/react";
 
 export function Tools(){

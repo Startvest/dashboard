@@ -16,7 +16,8 @@
     font-weight: normal;
 }
 *{
-    font-size: large !important;
+    font-size: medium;
+    font-family: 'Montserrat';
 }
 .label{
     font-weight: bold;
@@ -25,11 +26,7 @@ h1, h2, h3{
     font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, h6, p, ion-label, div{
-    font-family: 'Montserrat'
-}
-
-/* To make the contsnts of the page start from top to bottom */
+/* To make the contents of the page start from top to bottom */
 .ion-page{
     justify-content: normal;
     align-items: flex-start;

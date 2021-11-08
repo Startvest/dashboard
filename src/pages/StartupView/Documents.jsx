@@ -1,10 +1,10 @@
-import '../styles/fonts.css';
+import '../../styles/fonts.css';
 import { IonPage, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol, IonCard, IonCardTitle,
     IonCardContent, IonIcon, IonButton } from "@ionic/react";
-import { Toolbar } from "../components/Toolbar"
-import { IconCircle } from "../components/IconCircle"
+import { Toolbar } from "../../components/Toolbar"
+import { IconCircle } from "../../components/IconCircle"
 import { attach, cloudUpload, document, pencil } from "ionicons/icons"
-import '../styles/Documents.css'
+import '../../styles/Documents.css'
 
 export function Documents(){
 

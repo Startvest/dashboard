@@ -1,17 +1,17 @@
 import { IonSplitPane, IonApp, IonRouterOutlet, IonButtons, IonMenuButton } from '@ionic/react';
-import { Menu } from './Menu';
+import { Menu } from './StartMenu';
 import '../styles/Menu.css';
 import { Redirect } from 'react-router';
 import { IonReactHashRouter } from '@ionic/react-router';
-import { Overview } from '../pages/Overview';
-import { Analytics } from '../pages/Analytics';
-import { Investors } from '../pages/Investors'
-import { Tools } from '../pages/Tools';
-import { Messages } from '../pages/Messages';
-import { Documents } from '../pages/Documents';
-import { Account } from '../pages/Account'
+import { Overview } from '../pages/StartupView/Overview';
+import { Analytics } from '../pages/StartupView/Analytics';
+import { Investors } from '../pages/StartupView/Investors'
+import { Tools } from '../pages/StartupView/Tools';
+import { Messages } from '../pages/StartupView/Messages';
+import { Documents } from '../pages/StartupView/Documents';
+import { Account } from '../pages/StartupView/Account'
 import { Link } from 'react-router-dom';
-import {Campaign} from '../pages/CreateCampaign';
+import {Campaign} from '../pages/StartupView/CreateCampaign';
 
 export function Dashboard(){
     return(

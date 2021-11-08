@@ -1,29 +1,29 @@
-import { Img } from "../Img"
-import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle, IonButtons } from "@ionic/react";
-import { appsSharp, analyticsSharp, construct, person, cash } from "ionicons/icons"
+import { Img } from "./Img"
+import { IonMenu, IonContent, IonList, IonItem, IonIcon, IonMenuToggle } from "@ionic/react";
+import { appsSharp, analyticsSharp, people, hammer, chatbox, documentText, person, addCircleOutline } from "ionicons/icons"
 import { useLocation } from 'react-router-dom';
 import '@ionic/react/css/core.css';
-import '../../styles/Menu.css';
-import '../../styles/fonts.css';
-import Image from '../../assets/logo-white.png';
-import { useState } from "react";
+import '../styles/Menu.css';
+import '../styles/fonts.css';
+import Image from '../assets/logo-white.png';
+import { Link } from 'react-router-dom';
 
-
-export function InvestorsMenu(){
+export function Menu(){
     const urlRoute = useLocation();
     const selections = [
         {name:'Overview', icon: appsSharp, url:'/overview'},
         {name:'Analytics', icon: analyticsSharp, url:'/analytics'},
-        {name:'Invest', icon: cash, url:'/invest'},
-        {name:'Tools', icon: construct, url:'/tools'},
-        {name:'Account', icon: person, url:'/my-account'},
+        {name:'Investors', icon: people, url:'/investors'},
+        {name:'Tools', icon: hammer, url:'/tools'},
+        {name:'Messages', icon: chatbox, url:'/messages'},
+        {name: 'Raise Funds', icon: addCircleOutline, url:'/campaign'},
+        {name:'Documents', icon: documentText, url:'/documents'},
+        {name:'Account', icon: person, url:'/my-account'}
     ]
-
-   
     return(
-        <IonMenu side="start" type="overlay" menuId="investor-dashboard" contentId="investor-main" id="menu" className="menu">
+        <IonMenu side="start" type="overlay" menuId="dashboard" contentId="main" className="menu">
             <IonContent> 
-                <Img src={Image} />
+            <Link to={"/overview"}><Img src={Image} alt="StartVest Logo"/></Link>
                 <IonList>
                     {selections.map((element,index)=> {
                         return(

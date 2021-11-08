@@ -1,11 +1,5 @@
-:root{
-     --primary: #21295C;
-     --secondary: #1B3B6F;
-     --alternate: #065A82;
-     --accent: #D3E2ED;
-     --faded: #9EB3C2;
-     --altfade: #E8EAEF;
-   }
+/* To import the colors of the brand */
+@import "./colors.css";
 
 .campaign-head{
      font-weight: bold !important;

@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import { IonPage, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol  } from '@ionic/react';
-import { Card, CardContent } from '../components/card'
-import '../styles/fonts.css';
-import '../styles/campaign.css';
+import { Card, CardContent } from '../../components/card'
+import '../../styles/fonts.css';
+import '../../styles/campaign.css';
 
 // For bootstrap
 import {Form, FloatingLabel, Button, ProgressBar} from 'react-bootstrap';

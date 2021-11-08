@@ -25,8 +25,8 @@ import SignUp from '../assets/images/sign_in.svg';
 // Import Notifications
 import Notifyer from '../components/notification';
 
-import { Dashboard } from '../components/DashBoard';
-import { InvestorDashboard } from '../components/Investors/Dashboard'
+import { Dashboard } from '../components/StartDashboard';
+import { InvestorDashboard } from '../components/InvDashboard'
 
 function Signup({setScreen}){
      const[loading, setloading] = useState(false);

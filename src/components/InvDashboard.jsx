@@ -1,14 +1,14 @@
 import { IonSplitPane, IonApp, IonRouterOutlet, IonButtons, IonMenuButton } from '@ionic/react';
-import { InvestorsMenu } from './Menu';
-import '../../styles/Menu.css';
+import { InvestorsMenu } from './InvMenu';
+import '../styles/Menu.css';
 import { Route, Redirect } from 'react-router';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { IonReactHashRouter } from '@ionic/react-router';
-import { InvestorOverview } from '../../pages/InvestorsView/Overview';
-import { InvestorAnalytics } from '../../pages/InvestorsView/Analytics';
-import { Invest } from '../../pages/InvestorsView/Invest';
-import { InvestorTools } from '../../pages/InvestorsView/Tools';
-import { InvestorAccount } from '../../pages/InvestorsView/Account';
+import { InvestorOverview } from '../pages/InvestorsView/Overview';
+import { InvestorAnalytics } from '../pages/InvestorsView/Analytics';
+import { Invest } from '../pages/InvestorsView/Invest';
+import { InvestorTools } from '../pages/InvestorsView/Tools';
+import { InvestorAccount } from '../pages/InvestorsView/Account';
 
 
 export function InvestorDashboard(){

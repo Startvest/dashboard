@@ -1,9 +1,9 @@
-import '../styles/fonts.css';
-import '../styles/Investors.css'
+import '../../styles/fonts.css';
+import '../../styles/Investors.css'
 import { IonAvatar, IonButton, IonButtons, IonIcon, IonMenuButton, IonPage } from "@ionic/react";
 import { add } from 'ionicons/icons'
-import { Card, CardContent } from '../components/card';
-import { Img } from '../components/Img';
+import { Card, CardContent } from '../../components/card';
+import { Img } from '../../components/Img';
 
 export function Investors(){
 
@@ -15,7 +15,7 @@ export function Investors(){
         height: '45%'
     }
 
-    const data = require('../dummyMessages.json')
+    const data = require('./dummyMessages.json');
     const investors = data.investors;
 
     return(

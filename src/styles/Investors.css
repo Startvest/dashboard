@@ -1,3 +1,6 @@
+/* To import the colors of the brand */
+@import "./colors.css";
+
 #content-investors{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -22,7 +25,7 @@
 }
 
 .btn-add{
-    --background: #1B3B6F;
+    --background: var(secondary);
     width: 50%;
     height: 30px;
     margin-left: auto;

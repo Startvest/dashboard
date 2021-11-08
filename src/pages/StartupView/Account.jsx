@@ -1,9 +1,9 @@
 import { IonPage, IonMenuButton, IonButtons, IonGrid, IonCol, IonLabel, IonAvatar, IonButton, IonIcon, IonRow } from '@ionic/react';
-import { Toolbar } from '../components/Toolbar';
-import { Img } from "../components/Img";
+import { Toolbar } from '../../components/Toolbar';
+import { Img } from "../../components/Img";
 import { mail, person, key, cash, call, logOut, cloudUpload } from 'ionicons/icons'
-import '../styles/fonts.css';
-import '../styles/Account.css';
+import '../../styles/fonts.css';
+import './styles/Account.css';
 
 export function Account(){
 

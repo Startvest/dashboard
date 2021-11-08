@@ -1,21 +1,17 @@
-:root{
-  --startvest-primary: #21295C;
-  --secondary: #1B3B6F;
-  --alternate: #065A82;
-  --accent: #D3E2ED;
-  --faded: #9EB3C2;
-  --altfade: #E8EAEF;
-}
+/* To import the colors of the brand */
+@import "./colors.css";
+
 
 ion-menu ion-header, ion-menu ion-content {
-    --background: var(--startvest-primary);
+    --background: var(--primary);
 }
 
 ion-item{
-  --background: var(--startvest-primary);
-  height: 50px !important;
+  --background: var(--primary);
+  height: max-content;
   display: flex;
   align-items: center;
+  margin: .5em auto;
 }
 
 ion-icon{
@@ -23,6 +19,7 @@ ion-icon{
 }
 .label{
   font-family: 'Montserrat', sans-serif;
+  font-size: large !important;
   margin: 0;
 }
 
@@ -39,23 +36,34 @@ ion-menu.md ion-content {
 ion-menu.md ion-list {
   --width: 100%;
   padding: 20px 0;
-  background: var(--startvest-primary);
+  background: var(--primary);
 
 
 }
 
 .not-active{
-  opacity: 0.65;
+  opacity: 0.7;
   color: #f5f5f5;
 }
 
 .active{
   --background: var(--accent);
-  color: var(--startvest-primary);
-  border-radius: 5px ;
-  font-weight: bolder;
+  color: var(--primary);
+  border-radius: 10px ;
+  font-weight: bold !important;
   opacity: 0.9;
 }
+/* ion-item-divider{
+  height: 1px !important;
+  width: 100%;
+  opacity: 0.8;
+  --background: var(--accent);
+  border-radius: 5px;
+
+  --padding-top: 0;
+  --padding-bottom: 0;
+} */
+
 
 @media screen and (max-width:768px) {
   ion-menu.md{

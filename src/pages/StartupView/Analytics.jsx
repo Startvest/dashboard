@@ -1,7 +1,7 @@
-import '../styles/fonts.css';
-import '../styles/Analytics.css'
+import '../../styles/fonts.css';
+import '../../styles/Analytics.css'
 import { IonPage, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon } from "@ionic/react";
-import { Toolbar } from '../components/Toolbar';
+import { Toolbar } from '../../components/Toolbar';
 import { barChart } from "ionicons/icons"
 
 export function Analytics(){

@@ -1,19 +1,19 @@
-import '../styles/fonts.css';
-import '../styles/Messages.css';
+import '../../styles/fonts.css';
+import '../../styles/Messages.css';
 import { IonPage, IonMenuButton, IonButtons, IonList, IonSearchbar, IonItem, IonAvatar, IonLabel, IonIcon, IonSegmentButton, IonContent, IonSlides, IonSlide } from "@ionic/react";
 import { IonSegment } from "@ionic/react"
 import { ellipsisVertical } from 'ionicons/icons'
 import { useState, useRef } from 'react';
-import { Img } from '../components/Img';
-import { Toolbar } from '../components/Toolbar';
-import { MessagePage } from '../components/MessagePage';
+import { Img } from '../../components/Img';
+import { Toolbar } from '../../components/Toolbar';
+import { MessagePage } from '../../components/MessagePage';
 
 export function Messages(){
 
     const [searchText, setSearchText] = useState();
 
 
-    const messages = require('../dummyMessages.json');
+    const messages = require('./dummyMessages.json');
     for(let i=0; i<messages.jobSeekers.length; i++){
         messages.jobSeekers[i].url = `/candiates/${messages.jobSeekers[i].sender}`
     }

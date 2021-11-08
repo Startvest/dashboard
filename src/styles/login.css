@@ -1,14 +1,8 @@
 /* Css for profile page */
 
 /* To import the colors of the brand */
-:root{
-     --primary: #21295C;
-     --secondary: #1B3B6F;
-     --alternate: #065A82;
-     --accent: #D3E2ED;
-     --faded: #9EB3C2;
-     --altfade: #E8EAEF;
-   }
+@import "./colors.css";
+
    .page{
      overflow-y: scroll;
      font-size: medium !important;
@@ -36,7 +30,7 @@
      margin: auto;
      font-weight: bold;
      text-align: center;
-     width: 70% !important;
+     /* width: 50% ; */
 }
 .form_box{
      height: max-content;
