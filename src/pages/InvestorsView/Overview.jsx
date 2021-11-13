@@ -1,102 +1,56 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCol, IonGrid, IonIcon, IonMenuButton, IonPage, IonRow, IonToolbar } from "@ionic/react";
-import { IconCircle } from '../../components/IconCircle';
-import { wallet, chevronForward } from 'ionicons/icons'
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCol, IonGrid, IonIcon, IonMenuButton, IonContent, IonPage, IonRow, IonToolbar } from "@ionic/react";
+import { Container, Col , Row, Dropdown} from "react-bootstrap";
+import {BellFill, ChatLeftTextFill, Person, CaretDown} from "react-bootstrap-icons";
+
+// Ionic Imports
+// import {ToolbarItem, DropdownItem, DropdownMenu} from "../../components/Toolbar";
+// import {caretDownOutline, settings, lockClosed, logOut} from 'ionicons/icons';
 import './styles/Overview.css'
 export function InvestorOverview(){
 
-    const styleHorizontal = {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '2rem'
-    }
-
-    let accountBalance = "150,000"
     return(
-        <IonPage>
-            <IonToolbar>
+        <IonPage className='page'>
+            <IonContent>
+            <IonToolbar >
                 <IonButtons slot="start">
                     <IonMenuButton menu="investor-dashboard" />
                 </IonButtons>
+                
+                <Container className='container shadow-sm'>
+                <Row>
+                    <Col >Hello Startup</Col>
+                    <Col xs={'auto'} className='toolbar-icon-cont ml-auto'>
+                        <ChatLeftTextFill className='toolbar-icon'/>
+                        <BellFill className='toolbar-icon'/>
+                        <Person className='toolbar-icon'/><CaretDown/>
+                    </Col>
+                   
+                </Row>
+                </Container>
             </IonToolbar>
 
-            <IonGrid className="grid">
-                <IonRow>
-                    <IonCol size-md="12" size-md="6" size-lg="4">
-                        <IonCard className="balance-card">
-                            <IonCardContent>
-                                <div style={styleHorizontal}>
-                                    <div>
-                                        <p>Your balance</p>
-                                        <h3><span>&#8358;</span>{accountBalance}</h3>
-                                    </div>
-                                    <IconCircle>
-                                        <IonIcon color="dark" icon={wallet} />
-                                     </IconCircle>
-                                </div>
-                            </IonCardContent>
-                        </IonCard>
-                    </IonCol>
+           <div className='overview-main'>
+               <p>Today is another good day to get funding!</p>
+                <Container>
+                    <Row className='headline-row'>
+                        <Col xs={4} className='headline-cont'>
+                        </Col>
 
-                    <IonCol size-md="12" size-md="6" size-lg="6">
-                        <IonCard>
-                            <IonCardContent>
-                                <div style={styleHorizontal}>
-                                    <div>
-                                        <h3>Want to start investing right away?</h3>
-                                        <h5>Get started</h5>
-                                    </div>
+                        <Col xs={4} className='headline-cont'>
+                        </Col>
 
-                                    <IonButton slot="end" type="icon-only" id="btn-start">
-                                        <IonIcon id="icon-start" icon={chevronForward}/>
-                                    </IonButton>
+                        <Col xs={4} className='headline-cont'>
+                        </Col>
 
-                                </div>
-                            </IonCardContent>
-                        </IonCard>
-                    </IonCol>
+                        <Col xs={4} className='headline-cont'>
+                        </Col>
 
-                </IonRow>
-
-                <IonRow>
-                    <IonCol size-sm="12" size-md="6" size-lg="5">
-                        <IonCard>
-                            <IonCardContent>
-                                <div>
-                                    <IonCardHeader>
-                                        Feeling Generous?😏
-                                    </IonCardHeader>
-                                    <p>Instanly deposit funds to your wallet using our secure payment platform</p>
-                                
-                                    <IonButton>
-                                        Add Funds
-                                    </IonButton>
-                                </div>
-
-                            </IonCardContent>
-                        </IonCard>
-                    </IonCol>
-
-                    <IonCol size-sm="12" size-md="6" size-lg="8">
-                        <IonCard>
-                            <IonCardContent>
-                                <div style={styleHorizontal}>
-                                    <div>
-                                        <h3 style={{fontWeight: 'bold'}}>Equity Crowd Funding, the future of investment?</h3>
-                                        <h5>Get up to speed here</h5>
-                                    </div>
-
-                                    <IonButton slot="end" type="icon-only" id="btn-start">
-                                        <IonIcon id="icon-start" icon={chevronForward}/>
-                                    </IonButton>
-
-                                </div>
-                            </IonCardContent>
-                        </IonCard>
-                        
-                    </IonCol>
-                </IonRow>
-            </IonGrid>
-
+                        <Col xs={4} className='headline-cont'>
+                        </Col>
+                    </Row>
+                </Container>
+           </div>
+            </IonContent>
         </IonPage>
     )
 }

@@ -11,12 +11,18 @@ import { Link } from 'react-router-dom'
 
 
 export function InvestorsMenu(){
+    const pro = () =>{
+        return(
+            <span className="pro-icon">Pro</span>
+        )
+    }
+
     const urlRoute = useLocation();
     const selections = [
         {name:'Overview', icon: appsSharp, url:'/overview'},
         {name:'Analytics', icon: analyticsSharp, url:'/analytics'},
         {name:'Invest', icon: cash, url:'/invest'},
-        {name:'Tools', icon: construct, url:'/tools'},
+        {name:'Tools', icon: construct, url:'/tools', add:pro()},
         {name:'Account', icon: person, url:'/my-account'},
     ]
 
@@ -31,12 +37,12 @@ export function InvestorsMenu(){
                             <IonMenuToggle key={index} autoHide="false">
                                 <IonItem lines="none" routerDirection="right" routerLink={element.url} className={urlRoute.pathname===element.url? 'active':'not-active'}> 
                                     <IonIcon color={urlRoute.pathname===element.url?'#21295C':'#f5f5f5'} icon={element.icon} slot="start" />
-                                    <h3 className="label">{element.name}</h3>
+                                    <h3 className="label">{element.name} {element.add}</h3>
                                 </IonItem>
                             </IonMenuToggle>
                         )
                     } )}
-                     {/* <IonItemDivider /> */}
+                     <IonItem><div className='divider'></div></IonItem>
                 </IonList>
             </IonContent> 
         </IonMenu>

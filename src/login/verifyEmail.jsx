@@ -73,7 +73,7 @@ function VerifyEmail({email, setScreen, close}){
                
                <div className='flex-fill'> <img src={VerifySVG} alt='Verify Email' className='vemail-logo '/></div>
                
-               <div ><X onClick={close} color={'#21295C'} height={30} width={30} /></div>
+               <div ><X onClick={close} className='close_icon' color={'#21295C'} height={30} width={30} /></div>
                </div>
 
                <div className='vemail-head'>Verify your email address</div>

@@ -168,11 +168,14 @@ Form{
      max-width: 50vw;
      margin: auto;
      padding: 1em;
-     margin: 10vh auto 2em;
+     /* margin: 10vh auto 2em; */
      text-align: center;
 }
 #no_disp{
      visibility: hidden;
+}
+.close_icon:hover{
+     cursor: pointer;
 }
 .vemail-logo{
      height: max-content;

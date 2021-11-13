@@ -1,10 +1,36 @@
-.dropdown-menu{
+/* To import the colors of the brand */
+@import "./colors.css";
+
+
+.toolbar-icon-cont{
+    color: var(--primary) ;
+}
+.toolbar-icon{
+    font-size: large; 
+    margin: auto 1em;
+}
+
+
+/* .dropdown-menu{
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px #00000033;
     padding: 12px 16px;
     z-index: 1;
+} */
+.overview-main{
+    margin-top: 0 !important;
+}
+.headline-row{
+    overflow-x: scroll;
+}
+.headline-container{
+    height: max-content;
+    min-height: 50px;
+    color: green;
+    border-radius: 10px;
+    width: 100%;
 }
 
 ion-chip:hover .dropdown-menu{

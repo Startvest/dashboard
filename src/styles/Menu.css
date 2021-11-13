@@ -53,16 +53,28 @@ ion-menu.md ion-list {
   font-weight: bold !important;
   opacity: 0.9;
 }
-/* ion-item-divider{
+.pro-icon{
+  background: var(--accent);
+  opacity: 0.9;
+  color: var(--primary);
+  font-size: x-small;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin: 0 .5em;
+  font-weight: bold;
+}
+/* ion-item{
+  width: 100%;
+  
+  --background: transparent;
+} */
+ion-item .divider{
   height: 1px !important;
   width: 100%;
   opacity: 0.8;
-  --background: var(--accent);
+  background: var(--accent);
   border-radius: 5px;
-
-  --padding-top: 0;
-  --padding-bottom: 0;
-} */
+}
 
 
 @media screen and (max-width:768px) {
