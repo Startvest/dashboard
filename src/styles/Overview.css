@@ -11,28 +11,125 @@
 }
 
 
-/* .dropdown-menu{
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px #00000033;
-    padding: 12px 16px;
-    z-index: 1;
-} */
+
 .overview-main{
     margin-top: 0 !important;
 }
-.headline-row{
+.overview-tag{
+    margin: 1em 0 0 2em;
+    font-weight: bold;
+    color: var(--primary);
+}
+.salutation{
+    font-size: large;
+    color: var(--primary);
+    font-weight: bold;
+
+}
+/* Css for the banner style */
+.ban-stack{
     overflow-x: scroll;
 }
-.headline-container{
+.banner-head{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    font-weight: bold;
+}
+.banner-cont{
     height: max-content;
+    width: max-content;
+    min-width: 20em;
     min-height: 50px;
-    color: green;
+    color: white;
     border-radius: 10px;
-    width: 100%;
+    margin: 1em 2em;
+    padding: 1em;
 }
 
+.banner-cont p{
+    font-size: 1em;
+    
+}
+
+/* End of Bannner styles */
+.ohead{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary);
+    font-weight: bold;
+}
+.overview-row2{
+    margin: 2em auto;
+}
+
+.setup{
+    text-align: left !important;
+}
+.setup ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+.setup input{
+    accent-color: var(--secondary);
+}
+.setup-list{
+    font-size:1em;
+    /* font-weight:bold; */
+    
+}
+.quick-campaign h1{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+}
+.qc-card{
+    text-align:center;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    color: white;
+}
+.qc-card Button{
+    background-color: white;
+    border-radius: 10px;
+    color: var(--primary);
+    border: none;
+    font-weight: bold !important;
+}
+.qc-card p{
+    font-weight: bold;
+}
+.qc-card Button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    
+}
+
+
+/* Css for previuos investors table */
+.investors{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing:  0 .5em; 
+    color: var(--primary);
+    
+}
+.investors-row{
+    background-color: #1b3b6f33;
+    border-radius: 10px;
+    margin: 1em auto;
+}
+.investors-cell{
+    padding-left: 1em;
+}
+.investors-row:hover{
+    background-color: #1b3b6f42;
+}
+td:first-child{
+    font-weight: bold !important;
+}
 ion-chip:hover .dropdown-menu{
     display: block;
 }

@@ -174,7 +174,7 @@ function Login({setScreen, setVal}){
 
      // Logic for external api call, use external functions, do not call them directly
      const submit = (e) => {
-          setScreen('iDash');
+          setScreen('sDash');
           setVal(value);
      }
      return (

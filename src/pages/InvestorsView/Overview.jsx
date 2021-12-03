@@ -5,7 +5,7 @@ import {BellFill, ChatLeftTextFill, Person, CaretDown} from "react-bootstrap-ico
 // Ionic Imports
 // import {ToolbarItem, DropdownItem, DropdownMenu} from "../../components/Toolbar";
 // import {caretDownOutline, settings, lockClosed, logOut} from 'ionicons/icons';
-import './styles/Overview.css'
+import '../../styles/Overview.css';
 export function InvestorOverview(){
 
     return(
@@ -18,7 +18,7 @@ export function InvestorOverview(){
                 
                 <Container className='container shadow-sm'>
                 <Row>
-                    <Col >Hello Startup</Col>
+                    <Col >Hello Investor Sabinus!</Col>
                     <Col xs={'auto'} className='toolbar-icon-cont ml-auto'>
                         <ChatLeftTextFill className='toolbar-icon'/>
                         <BellFill className='toolbar-icon'/>
@@ -34,18 +34,23 @@ export function InvestorOverview(){
                 <Container>
                     <Row className='headline-row'>
                         <Col xs={4} className='headline-cont'>
+                            <h1>Headline</h1>
                         </Col>
 
                         <Col xs={4} className='headline-cont'>
+                        <h1>Headline</h1>
                         </Col>
 
                         <Col xs={4} className='headline-cont'>
+                        <h1>Headline</h1>
                         </Col>
 
                         <Col xs={4} className='headline-cont'>
+                        <h1>Headline</h1>
                         </Col>
 
                         <Col xs={4} className='headline-cont'>
+                        <h1>Headline</h1>
                         </Col>
                     </Row>
                 </Container>

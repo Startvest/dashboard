@@ -11,20 +11,22 @@
 /* Styling to change the appearance of the scroll bars */
 /* width */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(33, 41, 92, 0.1);
+
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: rgba(33, 41, 92, 0.6);
   border-radius: 3px;
 }
+
 /* The arrows at the beginning and end*/
 ::-webkit-scrollbar-button{
   display: none;

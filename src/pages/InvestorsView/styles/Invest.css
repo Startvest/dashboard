@@ -45,15 +45,3 @@ ion-page.md{
     }
 }
 
-::-webkit-scrollbar{
-    width: 15px;
-}
-
-::-webkit-scrollbar-track{
-    background: #a1a1a1;
-}
-
-::-webkit-scrollbar-thumb{
-    background: #2107b6;
-    border-radius:5px;
-}

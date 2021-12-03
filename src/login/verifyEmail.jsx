@@ -58,7 +58,7 @@ function VerifyEmail({email, setScreen, close}){
                // As a different function on its own, so resend can use it
                console.log(codes['1']  + codes['2'] + codes['3'] + codes['4']);
                setNotify({err:true, message:'Email verified successfully', type:'success'})
-               setScreen('sDash');        
+               setScreen('iDash');        
            }
      }
  
