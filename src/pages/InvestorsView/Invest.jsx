@@ -20,11 +20,12 @@ import API from '../../api/internal';
 import APIEx from '../../api/external';
 
 
-    
+let balance 
     
 
     
 export function Invest(){
+     balance = investor.balance;
      const [value, setValue] = useState({
           'startup': '',
           'units': '',
