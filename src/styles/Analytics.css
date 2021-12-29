@@ -1,3 +1,26 @@
 #progress{
     color: #177a3f;
 }
+
+#empty-analytics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 5rem;
+    padding: 3em;
+}
+
+#empty-analytics p{
+    color: var(--accent);
+    font-size: 1.25em;
+}
+
+#empty-analytics > img{
+    width: 270px;
+    max-width: 300px;
+    height: 270px;
+    max-height: 300px;
+}

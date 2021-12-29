@@ -1,0 +1,65 @@
+@import './colors.css';
+#tools-page{
+    --background: #065A82;
+}
+.card-title{
+    text-align: center;
+    color: var(--secondary);
+}
+
+.card-body{
+    width: 100%;
+}
+
+.btn-try{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--faded);
+    border: var(--faded);
+    color: var(--secondary);
+    width: 6em;
+}
+
+.card{
+    padding-top: 20px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+.img-holder {
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-img{
+    width: auto;
+    height: auto;
+}
+
+p.card-text{
+    font-size: 13px;
+    text-align: center;
+}
+
+.page-container{
+    padding: 5px;
+}
+
+.page-container h2, .page-container p{
+    padding-left: 25px;
+}
+
+@media (max-width: 768px){
+    .page-container h2, .page-container p{
+        padding: 0;
+        text-align: center;
+    }
+    
+    .page-container .row{
+        gap: 3em;
+    }
+}

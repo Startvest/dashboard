@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 export function Menu(){
     const pro = () =>{
         return(
-            <span className="pro-icon">Pro</span>
+            <span className={urlRoute.pathname=== '/tools' ? "pro-icon-active":"pro-icon"}>Pro</span>
         )
     }
 
