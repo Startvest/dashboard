@@ -1,11 +1,9 @@
 import '../../styles/fonts.css';
 import '../../styles/Messages.css';
-import { IonPage, IonMenuButton, IonButtons, IonList, IonSearchbar, IonItem, IonAvatar, IonLabel, IonIcon, IonSegmentButton, IonContent, IonSlides, IonSlide } from "@ionic/react";
+import { IonPage, IonMenuButton, IonButtons, IonList, IonSearchbar, IonItem, IonAvatar, IonLabel, IonSegmentButton } from "@ionic/react";
 import { IonSegment } from "@ionic/react"
-import { ellipsisVertical } from 'ionicons/icons'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Img } from '../../components/Img';
-import { Toolbar } from '../../components/Toolbar';
 import { MessagePage } from '../../components/MessagePage';
 
 export function Messages(){
@@ -18,7 +16,7 @@ export function Messages(){
         messages.jobSeekers[i].url = `/candiates/${messages.jobSeekers[i].sender}`
     }
     
-    const [value, setValue] = useState("0");
+    //const [value, setValue] = useState("0");
 
   
 

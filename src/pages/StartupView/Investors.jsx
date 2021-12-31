@@ -15,48 +15,53 @@ export function Investors(){
         height: '45%'
     }
 
+    if(window.innerWidth > 768){
+        let toolbarClass = 'container shadow-sm'
+    } else {
+        let toolbarClass = 'container'
+    }
     const investors = [
         {
             name: 'Investor Sabinus',
             amount: 50000,
             timeStamp: `${new Date().getMinutes()} minutes ago`,
             description: 'Fintech, Blockchain and Artificial Intelligence',
-            image: '',
+            image: "https://avatars.dicebear.com/api/initials/InvestorSabinus.svg",
         },
         {
             name: 'Investor Sabinus',
             amount: 50000,
             timeStamp: `${new Date().getMinutes()} minutes ago`,
             description: 'Fintech, Blockchain and Artificial Intelligence',
-            image: '',
+            image: "https://avatars.dicebear.com/api/initials/InvestorSabinus.svg",
         },
         {
             name: 'Investor Sabinus',
             amount: 50000,
             timeStamp: `${new Date().getMinutes()} minutes ago`,
             description: 'Fintech, Blockchain and Artificial Intelligence',
-            image: '',
+            image: "https://avatars.dicebear.com/api/initials/InvestorSabinus.svg",
         },
         {
             name: 'Investor Sabinus',
             amount: 50000,
             timeStamp: `${new Date().getMinutes()} minutes ago`,
             description: 'Fintech, Blockchain and Artificial Intelligence',
-            image: '',
+            image: "https://avatars.dicebear.com/api/initials/InvestorSabinus.svg",
         },
         {
             name: 'Investor Sabinus',
             amount: 50000,
             timeStamp: `${new Date().getMinutes()} minutes ago`,
             description: 'Fintech, Blockchain and Artificial Intelligence',
-            image: '',
+            image: "https://avatars.dicebear.com/api/initials/InvestorSabinus.svg",
         },
         {
             name: 'Investor Sabinus',
             amount: 50000,
             timeStamp: `${new Date().getMinutes()} minutes ago`,
             description: 'Fintech, Blockchain and Artificial Intelligence',
-            image: '',
+            image: "https://avatars.dicebear.com/api/initials/InvestorSabinus.svg",
         },
 
 
@@ -71,7 +76,7 @@ export function Investors(){
                         <IonMenuButton />
                     </IonButtons>
 
-                    <Container className='container shadow-sm'>
+                    <Container className={window.innerWidth > 768?'container shadow-sm':'container'}>
                     <Row>
                         <Col >
                             <span className="salutation"></span>
@@ -110,28 +115,28 @@ export function Investors(){
                             </IonListHeader>
                             { investors.map((investor) => (
                                 <ListGroupItem>
-                                    <Container>
                                     <Row>
-                                        <Col xs={1}>
+                                        <Col xs={3}>
                                             <IonAvatar slot="start">
                                                 <IonImg src={investor.image}></IonImg>
                                             </IonAvatar>                                        
                                         </Col>
-                                        <Col lg={3}>
+                                        <Col xs={9} lg={3}>
                                             <h5 className="investor-entry">{investor.name}</h5>    
                                         </Col>
-                                        <Col lg={4}>
-                                            <p>{investor.description.slice(0, 28)+'...'}</p>                                        
-                                        </Col>
-                                        <Col xs={1}>
-                                            <p>{investor.amount}</p>
-                                        </Col>
-                                        <Col xs={3}>
-                                            <p>Invested {investor.timeStamp}</p>
-                                        </Col>
+                                        <span className="investor-extra">
+                                            <Col xs={0} lg={4}>
+                                                <p>{investor.description.slice(0, 28)+'...'}</p>                                        
+                                            </Col>
+                                            <Col xs={0} lg={1}>
+                                                <p>{investor.amount}</p>
+                                            </Col>
+                                            <Col xs={0} lg={3}>
+                                                <p>Invested {investor.timeStamp}</p>
+                                            </Col>
+                                        </span>
 
                                     </Row>
-                                    </Container>
                                 </ListGroupItem>
                             ))}
                         

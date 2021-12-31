@@ -1,0 +1,29 @@
+div.row{
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+div.col{
+    display: flex;
+    flex-direction: column;
+}
+div.col:first-of-type{
+    width: fit-content;
+}
+
+span{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+ion-avatar ion-img{
+    width: 100px;height: 100px;
+}
+
+@media (max-width: 465px) {
+    div.row{
+        align-items: center;
+    }
+}

@@ -1,6 +1,30 @@
 /* To import the colors of the brand */
 @import "./colors.css";
 
+/* Styling to change the appearance of the scroll bars */
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(33, 41, 92, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(33, 41, 92, 0.6);
+  border-radius: 3px;
+}
+
+/* The arrows at the beginning and end*/
+::-webkit-scrollbar-button{
+  display: none;
+}
+/* the track (progress bar) NOT covered by the handle. */
+
+
 .menu{
   --width: 50px;
 }

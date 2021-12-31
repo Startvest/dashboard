@@ -23,8 +23,13 @@
 ::-webkit-scrollbar-button{
     display: none;
 }
-  /* the track (progress bar) NOT covered by the handle. */
-  
+/* the track (progress bar) NOT covered by the handle. */
+ion-avatar{
+    height: 90%;
+    aspect-ratio: 1;
+    margin: 0 !important;
+}
+
 
 .investors-details{
     width: 100%;
@@ -38,6 +43,7 @@
 .list-group-item{ /* Style for bootstrap list group */
     height: 65px; 
     background: var(--altfade);
+    padding: 0.5rem 0.7rem;
 }
 
 #searchbar{
@@ -80,9 +86,42 @@ h5, p{
     margin: 0;
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 465px){
     #searchbar{
         width: 100%;
+    }
+
+    ion-avatar.md.hydrated{
+        margin: 0;
+    }
+    
+    div.container{
+        display: block !important;
+    }
+    ion-list-header{
+        display: none;
+    }
+    .investor-entry{ 
+        text-align: center;
+        margin: auto 0;
+        height: fit-content !important;
+    }
+
+    div.row{
+        padding: 0;
+        height: 100%;
+        margin: 0;
+    }
+
+    div.row .investor-extra{
+        display: none;
+    }
+
+    div.row > *{
+        padding: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
 }

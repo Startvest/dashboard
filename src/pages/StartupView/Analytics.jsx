@@ -1,9 +1,6 @@
 import '../../styles/fonts.css';
 import '../../styles/Analytics.css'
-import { IonPage, IonMenuButton, IonButtons, IonToolbar, IonCard, IonCardContent, IonIcon, IonImg, IonContent } from "@ionic/react";
-import { Toolbar } from '../../components/Toolbar';
-import { barChart } from "ionicons/icons"
-import { Img } from '../../components/Img';
+import { IonPage, IonMenuButton, IonButtons, IonToolbar, IonContent } from "@ionic/react";
 import Image from '../../assets/images/analytics-empty.png';
 
 export function Analytics(){

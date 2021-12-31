@@ -12,6 +12,7 @@ import { Documents } from '../pages/StartupView/Documents';
 import { Account } from '../pages/StartupView/Account'
 import { Link } from 'react-router-dom';
 import {Campaign} from '../pages/StartupView/CreateCampaign';
+import { Settings } from '../pages/StartupView/Settings';
 
 export function Dashboard(){
     return(
@@ -32,6 +33,7 @@ export function Dashboard(){
                         <Link path="/documents" exact="true" component={Documents}></Link>
                         <Link path="/my-account" exact="true" component={Account}></Link>
                         <Link path="/campaign" exact="true" component={Campaign}></Link>
+                        <Link path="/settings" exact="true" component={Settings}></Link>
                         
                     </IonRouterOutlet>
 

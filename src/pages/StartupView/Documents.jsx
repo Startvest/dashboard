@@ -1,10 +1,7 @@
 import '../../styles/fonts.css';
-import { IonPage, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol, IonCard, IonCardTitle, IonToolbar,
-    IonCardContent, IonIcon, IonButton, IonContent } from "@ionic/react";
-import { Container, Col , Row, Card, CardImg, Button } from "react-bootstrap";
-import { document } from 'ionicons/icons';
+import { IonPage, IonMenuButton, IonButtons, IonToolbar, IonContent } from "@ionic/react";
+import { Container, Col , Row, Card } from "react-bootstrap";
 import {BellFill, ChatLeftTextFill, Person, CaretDown, FileEarmarkTextFill} from "react-bootstrap-icons";
-import { IconCircle } from "../../components/IconCircle"
 import '../../styles/Documents.css';
 import Image from '../../assets/images/document.png'
 export function Documents(){
