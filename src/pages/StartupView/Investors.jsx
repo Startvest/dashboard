@@ -1,5 +1,5 @@
 import '../../styles/fonts.css';
-import '../../styles/Investors.css';
+import styles from '../../styles/Investors.module.css';
 import { IonAvatar, IonLabel, IonButtons, IonMenuButton, IonPage, IonItem,
     IonContent, IonToolbar, IonSearchbar, IonImg, IonList, IonListHeader } from "@ionic/react";
 import { Container, Col , Row, ListGroup, Dropdown, Stack, Button, ListGroupItem} from "react-bootstrap";
